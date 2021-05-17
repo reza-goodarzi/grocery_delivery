@@ -1,8 +1,12 @@
 import React from 'react';
+import GlobalStyle from './styles/globalStyle';
 
 function App() {
   return (
-    <h1>Grocery Delivery</h1>
+    <div>
+      <GlobalStyle />
+      <p>تحویل درب منزل</p>
+    </div>
   );
 }
 
