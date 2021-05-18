@@ -25,6 +25,8 @@ const GlobalStyle = createGlobalStyle`
 		--color-white: #f7f7f7;
 		--color-white2: #fafafa;
 		--color-gray: #77798c;
+
+		--shadow-light: 0 0 3rem 3rem #00000003;
 	}
 
 	html, button{

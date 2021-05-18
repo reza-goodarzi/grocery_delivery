@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Button } from '../../styles/style';
+import LanguageButton from '../UI/LanguageButton';
 
 // Icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,6 +13,7 @@ const Header = () => {
 		<HeaderStyle>
 			<Menu>
 				<Avatar src={avatarImage} alt="User Avatar" />
+				<LanguageButton />
 				<Button>
 					<FontIcon icon={faQuestionCircle} />
 					<span>کمک لازم داری</span>
@@ -29,15 +31,15 @@ export default Header;
 
 const HeaderStyle = styled.header`
 	background-color: var(--color-white2);
-	padding: 5px 7rem;
+	padding: 0 4rem;
 	
 	display: grid;
 	grid-template-columns: repeat(8, 1fr);
-	grid-template-rows: 10vh;
+	grid-template-rows: 12vh;
 `;
 
 const Menu = styled.div`
-	grid-column: 1 / span 3;
+	grid-column: 1 / span 6;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
