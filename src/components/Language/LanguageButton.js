@@ -43,7 +43,7 @@ const LanguageButton = () => {
 
 	// Render language list
 	const languageList = (
-		<CardPopOver>
+		<CardPopOver setToHide={setShowSelectLang}>
 			{flagData.map(flag => (
 				<li key={flag.name}>
 					<a href="/" onClick={languageDataHandler.bind(null, flag)}>

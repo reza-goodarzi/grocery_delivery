@@ -38,7 +38,7 @@ const Avatar = () => {
 		<AvatarStyle>
 			<img src={avatarImage} alt="User Avatar" onClick={toggleShowOptions} />
 			{showOptions &&
-				<CardPopOver>
+				<CardPopOver setToHide={setShowOptions}>
 					{options.map(option => (
 						<li key={option.route}>
 							<NavLinkStyle activeClassName='active' to={option.route} onClick={toggleShowOptions}>
