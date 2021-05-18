@@ -23,13 +23,15 @@ const GlobalStyle = createGlobalStyle`
 		--color-secondary: #FFAD5F;
 		--color-black: #0D1136;
 		--color-white: #f7f7f7;
+		--color-white2: #fafafa;
 		--color-gray: #77798c;
 	}
 
-	html{
+	html, button{
 		font-family: 'shabnam';
 		font-size: 62.5%;
 		font-weight: normal;
+		color: var(--color-black);
 	}
 
 	body{
