@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
@@ -9,7 +10,6 @@ export const NavLinkStyle = styled(NavLink)`
 	}
 `;
 
-
-export const InputStyle = styled.input`
-
+export const FontIcon = styled(FontAwesomeIcon)`
+	margin-left: 5px;
 `;

@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import LanguageButton from '../Language/LanguageButton';
 import Avatar from '../Avatar/Avatar';
+import { Link } from 'react-router-dom';
 
 // Icon
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom';
+import { FontIcon } from '../../styles/style';
 
 const Header = () => {
 	return (
@@ -50,9 +50,5 @@ const Logo = styled.div`
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-`;
-
-const FontIcon = styled(FontAwesomeIcon)`
-	margin-left: 5px;
 `;
 

@@ -26,14 +26,24 @@ const GlobalStyle = createGlobalStyle`
 		--color-white2: #fafafa;
 		--color-gray: #77798c;
 
-		--shadow-light: 0 0 3rem 3rem #00000003;
+		--shadow-light: 0 0 3rem #00000003;
+		--shadow-dark: 0 3rem 5rem #00000005;
 	}
 
-	html, button{
+	html, button, a ,input{
 		font-family: 'shabnam';
 		font-size: 62.5%;
 		font-weight: normal;
 		color: var(--color-black);
+	}
+
+	h1{
+		font-size: 3rem;
+		margin: 0;
+	}
+	
+	p{
+		font-size: 1.6rem;
 	}
 
 	body{
@@ -56,6 +66,7 @@ const GlobalStyle = createGlobalStyle`
       border: none;
       cursor: pointer;
 		color: var(----color-black);
+
       display: flex;
       align-items: center;
 		transition: color .2s ease-in;
@@ -65,7 +76,7 @@ const GlobalStyle = createGlobalStyle`
 	button{
 		text-decoration: none;
       padding: 1.3rem 1.5rem;
-      border-radius: 5rem;
+      border-radius: 5px;
       transition: all 0.2s;
       position: relative;
       font-size: 1.6rem;
@@ -74,8 +85,26 @@ const GlobalStyle = createGlobalStyle`
       border: none;
       cursor: pointer;
 
+		display: flex;
+      align-items: center;
+		transition: color .2s ease-in;
+
 		&:hover{
 			color: var(--color-primary);
+		}
+	}
+
+/* ---------------------------------- Input --------------------------------- */
+	input{
+		width: 100%;
+		font-size: 1.6rem;
+		padding: 1.5rem 1rem;
+		border: none;
+		box-shadow: var(--shadow-dark);
+		border-radius: 5px;
+
+		&::placeholder{
+			color: var(--color-gray)
 		}
 	}
 
