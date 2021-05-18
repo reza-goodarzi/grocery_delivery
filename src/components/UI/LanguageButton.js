@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import CardPopOver from './CardPopOver';
+
 import styled from 'styled-components';
 import { Button, LinkButton } from '../../styles/style';
 
@@ -42,7 +44,7 @@ const LanguageButton = () => {
 
 	// Render language list
 	const languageList = (
-		<SelectLang>
+		<CardPopOver>
 			<List>
 				{flagData.map(flag => (
 					<li key={flag.name}>
@@ -53,7 +55,7 @@ const LanguageButton = () => {
 					</li>
 				))}
 			</List>
-		</SelectLang>
+		</CardPopOver>
 	);
 
 
@@ -86,32 +88,6 @@ const LanguageButtonStyle = styled(Button)`
 
 	span{
 		transform: translateX(1rem);
-	}
-`;
-
-const SelectLang = styled.div`
-	background-color: #fff;
-	box-shadow: var(--shadow-light);
-	margin: 2rem;
-	padding-left: 2rem;
-	border-radius: 5px;
-
-	position: absolute;
-	top: 100%;
-	right: -20%;
-
-	&::before{
-		content: "";
-   	position: absolute;
-   	width: 0px;
-   	height: 0px;
-   	border-style: solid;
-   	border-width: 0px 8px 9px;
-   	border-color: transparent transparent rgb(255, 255, 255);
-   	top: -8px;
-   	right: 15px;
-   	/* box-shadow: rgb(142 142 142 / 14%) -4px -4px 8px -3px; */
-   	pointer-events: none;
 	}
 `;
 
