@@ -1,27 +1,26 @@
 import styled from 'styled-components';
-import { Button } from '../../styles/style';
-import LanguageButton from '../UI/LanguageButton';
+import LanguageButton from '../Language/LanguageButton';
+import Avatar from '../Avatar/Avatar';
 
 // Icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
-
-import avatarImage from '../../assets/images/avatar.jpg';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 	return (
 		<HeaderStyle>
 			<Menu>
-				<Avatar src={avatarImage} alt="User Avatar" />
+				<Avatar />
 				<LanguageButton />
-				<Button>
+				<button>
 					<FontIcon icon={faQuestionCircle} />
 					<span>کمک لازم داری</span>
-				</Button>
-				<Button>پیشنهادات</Button>
+				</button>
+				<button>پیشنهادات</button>
 			</Menu>
 			<Logo>
-				<h1>بقالی</h1>
+				<Link to='/'><h1>بقالی</h1></Link>
 			</Logo>
 		</HeaderStyle>
 	)
@@ -53,13 +52,7 @@ const Logo = styled.div`
 	align-items: center;
 `;
 
-const Avatar = styled.img`
-	border-radius: 50%;
-	height: 4rem;
-	width:4rem;
-`;
-
 const FontIcon = styled(FontAwesomeIcon)`
 	margin-left: 5px;
-`
+`;
 

@@ -2,11 +2,12 @@ import styled from 'styled-components';
 
 // image
 import background from '../../assets/images/bg.png';
+import SearchInput from './SearchInput';
 
 function Search() {
 	return (
 		<SearchStyle>
-			<Background />
+			<SearchInput />
 		</SearchStyle>
 	)
 }
@@ -14,14 +15,10 @@ function Search() {
 export default Search;
 
 const SearchStyle = styled.section`
-	height: 88vh;
-`;
-
-const Background = styled.div`
 	background-image: url(${background});
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	height: 100%;
+	height: 88vh;
 	width: 100%;
-`
+`;

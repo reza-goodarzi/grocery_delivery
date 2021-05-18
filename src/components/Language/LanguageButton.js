@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import CardPopOver from './CardPopOver';
+import CardPopOver from '../UI/CardPopOver';
 
 import styled from 'styled-components';
-import { Button, LinkButton } from '../../styles/style';
 
 // Flag Icon
 import iran from '../../assets/images/flagIcon/iran.svg';
@@ -45,16 +44,14 @@ const LanguageButton = () => {
 	// Render language list
 	const languageList = (
 		<CardPopOver>
-			<List>
-				{flagData.map(flag => (
-					<li key={flag.name}>
-						<LinkButton href="/" onClick={languageDataHandler.bind(null, flag)}>
-							<Flag src={flag.src} alt={`Flag ${flag.name}`} />
-							<span>{flag.text}</span>
-						</LinkButton>
-					</li>
-				))}
-			</List>
+			{flagData.map(flag => (
+				<li key={flag.name}>
+					<a href="/" onClick={languageDataHandler.bind(null, flag)}>
+						<Flag src={flag.src} alt={`Flag ${flag.name}`} />
+						<span>{flag.text}</span>
+					</a>
+				</li>
+			))}
 		</CardPopOver>
 	);
 
@@ -73,7 +70,7 @@ const LanguageButton = () => {
 
 export default LanguageButton;
 
-const LanguageButtonStyle = styled(Button)`
+const LanguageButtonStyle = styled.button`
 	background-color: #fff;
 	border-radius: 3px;
 	border: 1px solid #00000010;
@@ -95,9 +92,4 @@ const Flag = styled.img`
 	width: 6rem;
 	height: 3rem;
 	transform: translateX(3px);
-`;
-
-const List = styled.ul`
-	list-style: none;
-	padding: 0;
 `;

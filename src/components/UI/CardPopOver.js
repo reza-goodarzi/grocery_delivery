@@ -3,7 +3,9 @@ import styled from 'styled-components'
 const CardPopOver = ({ children }) => {
 	return (
 		<Card>
-			{children}
+			<List>
+				{children}
+			</List>
 		</Card>
 	)
 }
@@ -16,6 +18,8 @@ const Card = styled.div`
 	margin: 2rem;
 	padding-left: 2rem;
 	border-radius: 5px;
+	width: max-content;
+
 
 	position: absolute;
 	top: 100%;
@@ -34,4 +38,10 @@ const Card = styled.div`
    	/* box-shadow: rgb(142 142 142 / 14%) -4px -4px 8px -3px; */
    	pointer-events: none;
 	}
+`;
+
+
+const List = styled.ul`
+	list-style: none;
+	padding: 0;
 `;
