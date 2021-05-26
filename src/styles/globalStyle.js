@@ -35,6 +35,18 @@ const GlobalStyle = createGlobalStyle`
 		font-size: 62.5%;
 		font-weight: normal;
 		color: var(--color-black);
+
+		@media screen and (max-width: 80em){
+			font-size: 50%;
+		}
+
+		@media screen and (max-width: 61.25em){
+			font-size: 43.75%;
+		}
+
+		@media screen and (max-width: 37.5em){
+			font-size: 31.25%;
+		}
 	}
 
 	h1{
@@ -47,6 +59,7 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 	body{
+		background-color: var(--color-white2);
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;

@@ -56,6 +56,11 @@ export default Avatar;
 
 const AvatarStyle = styled.div`
 	position: relative; 
+
+	@media screen and (max-width: 61.25em){
+		display: none;
+	}
+	
 	img{
 		cursor: pointer;
 		border-radius: 50%;
