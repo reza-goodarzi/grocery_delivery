@@ -29,7 +29,6 @@ const options = [
 
 const Avatar = () => {
 	const [showOptions, setShowOptions] = useState(false);
-
 	// Show/hide Language List
 	function toggleShowOptions() {
 		setShowOptions(pervState => !pervState);

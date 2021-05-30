@@ -97,6 +97,7 @@ const GlobalStyle = createGlobalStyle`
       //Change for the <button> element
       border: none;
       cursor: pointer;
+		outline: none;
 
 		display: flex;
       align-items: center;

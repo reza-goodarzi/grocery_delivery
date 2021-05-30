@@ -4,7 +4,7 @@ import Avatar from '../Avatar/Avatar';
 import { Link } from 'react-router-dom';
 
 // Icon
-import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontIcon } from '../../styles/style';
 
 const Header = () => {
@@ -23,8 +23,8 @@ const Header = () => {
 				<Link to='/'><h1>بقالی</h1></Link>
 			</Logo>
 		</HeaderStyle>
-	)
-}
+	);
+};
 
 export default Header;
 

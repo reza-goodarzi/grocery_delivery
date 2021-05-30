@@ -13,3 +13,13 @@ export const NavLinkStyle = styled(NavLink)`
 export const FontIcon = styled(FontAwesomeIcon)`
 	margin-left: 5px;
 `;
+
+export const XButton = styled.button`
+	padding: 1rem;
+	color: #888;
+	cursor: pointer;
+
+	&:hover{
+		color: red;
+	}
+`;
