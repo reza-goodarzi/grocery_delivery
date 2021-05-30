@@ -122,6 +122,27 @@ const GlobalStyle = createGlobalStyle`
 		}
 	}
 
+	// Costume Scroll bar
+
+	// work in firefox
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: rgba(155, 155, 155, 0.7) transparent;
+	}
+
+	// work in other browser
+	*::-webkit-scrollbar {
+		width: 5px;
+	}
+	*::-webkit-scrollbar-track {
+		background: transparent;
+	}
+	*::-webkit-scrollbar-thumb {
+		background-color: rgba(155, 155, 155, 0.7);
+		border-radius: 2rem;
+		border: none;
+	}
+
 `;
 
 export default GlobalStyle;

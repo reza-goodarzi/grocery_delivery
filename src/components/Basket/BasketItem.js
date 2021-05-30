@@ -57,6 +57,7 @@ const Numbers = styled.div`
 
 const FontIconStyle = styled(FontIcon)`
 	margin: 0;
+	cursor: pointer;
 	color: #777;
 `;
 
@@ -94,4 +95,3 @@ const TotalPrice = styled.span`
 	font-weight: 500;
 	margin-right: 1rem
 `;
-
