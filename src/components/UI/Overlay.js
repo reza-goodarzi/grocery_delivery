@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-const Overlay = ({ children }) => {
+const Overlay = ({ onClick }) => {
 	return (
-		<OverlayStyle />
+		<OverlayStyle onClick={onClick} />
 	);
 };
 

@@ -1,5 +1,5 @@
 
-import { faInfoCircle, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 import tempImg from '../../assets/images/Items/item1.jpg';
 import { FontIcon, XButton } from '../../styles/style';
@@ -19,7 +19,7 @@ const BasketItem = () => {
 				<span className="product-name">اسم محصولم حصولم حصول محصولم محصولم	</span>
 				<span className="price">25000 تومان</span>
 			</Details>
-			<TotalPrice>50000 تومان</TotalPrice>
+			<TotalPrice>50,000 تومان</TotalPrice>
 			<XButton>X</XButton>
 		</Item>
 	);
@@ -93,5 +93,6 @@ const Details = styled.div`
 
 const TotalPrice = styled.span`
 	font-weight: 500;
-	margin-right: 1rem
+	margin: 0 1rem;
+	text-align: center;
 `;

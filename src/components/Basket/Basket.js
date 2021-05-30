@@ -1,13 +1,14 @@
-import Overlay from "../UI/Overlay";
+import { useState } from "react";
 import BasketButton from "./BasketButton";
 import BasketModal from "./BasketModal";
 
 const Basket = () => {
+	const [showModal, setShowModal] = useState(false);
+
 	return (
 		<section>
-			<Overlay />
-			<BasketButton />
-			<BasketModal />
+			<BasketButton setShowModal={setShowModal} />
+			<BasketModal setShowModal={setShowModal} showModal={showModal} />
 		</section>
 	);
 };

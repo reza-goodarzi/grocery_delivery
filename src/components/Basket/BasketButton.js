@@ -2,9 +2,9 @@ import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import { FontIcon } from "../../styles/style";
 
-const BasketButton = () => {
+const BasketButton = ({ setShowModal }) => {
 	return (
-		<Container>
+		<Container onClick={() => setShowModal(true)}>
 			<span>
 				<FontIcon icon={faShoppingBag} />
 				5 آیتم

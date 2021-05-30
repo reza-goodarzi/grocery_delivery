@@ -1,39 +1,52 @@
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import { FontIcon, XButton } from "../../styles/style";
+// import Overlay from "../UI/Overlay";
 import BasketItem from "./BasketItem";
 
-const BasketModal = () => {
+const BasketModal = ({ showModal, setShowModal }) => {
+
+	const closeModal = () => {
+		setShowModal(false);
+	};
+
 	return (
-		<BasketModalStyle>
-			<Header>
-				<CloseModal>X</CloseModal>
-				<NumberOfItems>
-					<FontIcon icon={faShoppingBag} />
+		<>
+			{/* {showModal && <Overlay onClick={closeModal} />} */}
+			<BasketModalStyle showModal={showModal}>
+				<Header>
+					<CloseModal onClick={closeModal}>X</CloseModal>
+					<NumberOfItems>
+						<FontIcon icon={faShoppingBag} />
 					5 آیتم
 				</NumberOfItems>
-			</Header>
-			<Items>
-				<BasketItem />
-				<BasketItem />
-				<BasketItem />
-				<BasketItem />
-				<BasketItem />
-			</Items>
-			<Buttons>
-				<VoucherBtn>ایا کد تخفیف دارید؟</VoucherBtn>
-				<CheckoutButton>
-					<span className="text">پرداخت</span>
-					<span className="price">550,000 تومان</span>
-				</CheckoutButton>
-			</Buttons>
-		</BasketModalStyle>
+				</Header>
+				<Items>
+					<BasketItem />
+					<BasketItem />
+					<BasketItem />
+					<BasketItem />
+					<BasketItem />
+				</Items>
+				<Buttons>
+					<VoucherBtn>ایا کد تخفیف دارید؟</VoucherBtn>
+					<CheckoutButton>
+						<span className="text">پرداخت</span>
+						<span className="price">550,000 تومان</span>
+					</CheckoutButton>
+				</Buttons>
+			</BasketModalStyle>
+		</>
 	);
 };
 
 export default BasketModal;
 
-const BasketModalStyle = styled.div`
+const BasketModalStyle = styled.div.attrs(props => (
+	{
+		showModal: props.showModal
+	}
+))`
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -44,6 +57,9 @@ const BasketModalStyle = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+
+	transition: transform .25s ease;
+	transform: translateX(${props => props.showModal ? '0%' : '-100%'})
 `;
 
 const Header = styled.div`
