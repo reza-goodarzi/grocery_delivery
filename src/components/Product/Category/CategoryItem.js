@@ -19,7 +19,7 @@ function CategoryItem({ image, name, subCategories }) {
 			{showSubCategory &&
 				<SubCategories>
 					{subCategories.map(subCategory => (
-						<button key={subCategory}>{subCategory}</button>
+						<button key={subCategory.id}>{subCategory.name}</button>
 					))}
 				</SubCategories>
 			}
