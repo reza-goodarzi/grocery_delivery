@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import ProductCategories from "./ProductCategories";
-import ProductItem from "./ProductItem";
+import ProductCategories from "./Category/ProductCategories";
+import ProductItem from "./Item/ProductItem";
 
 function Product() {
 	return (

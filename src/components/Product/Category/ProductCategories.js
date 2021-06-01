@@ -1,6 +1,6 @@
 import { AnimateSharedLayout } from "framer-motion";
 import styled from "styled-components";
-import { categoryData } from "../../data/categoryData";
+import { categoryData } from "../../../data/categoryData";
 import CategoryItem from "./CategoryItem";
 
 function ProductCategories() {

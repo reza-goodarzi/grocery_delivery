@@ -2,7 +2,7 @@ import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import styled from "styled-components";
-import { FontIcon } from "../../styles/style";
+import { FontIcon } from "../../../styles/style";
 
 function CategoryItem({ image, name, subCategories }) {
 	const [showSubCategory, setShowSubCategory] = useState(false);

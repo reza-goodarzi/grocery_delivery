@@ -28,6 +28,7 @@ const Container = styled.button`
 	border-radius: 0 5px 5px 0;
 	display: flex;
 	flex-direction: column;
+	z-index: 100;
 
 	span{
 		margin: 7px 0;
