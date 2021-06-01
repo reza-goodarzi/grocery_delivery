@@ -21,6 +21,8 @@ const Container = styled.section`
 	display: flex;
 	justify-content: center;
 	overflow-x: scroll;
+	background-color: #fff;
+	border-bottom: 1px solid #f1f1f1;
 `;
 
 const Image = styled.img`

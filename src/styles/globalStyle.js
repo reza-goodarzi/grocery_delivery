@@ -59,7 +59,7 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 	body{
-		background-color: var(--color-white2);
+		background-color: var(--color-white);
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;

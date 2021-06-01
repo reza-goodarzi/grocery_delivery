@@ -59,7 +59,7 @@ const BasketModalStyle = styled.div.attrs(props => (
 	align-items: center;
 
 	transition: transform .25s ease;
-	transform: translateX(${props => props.showModal ? '0%' : '-100%'})
+	transform: translateX(${props => props.showModal ? '0%' : '-100%'});
 `;
 
 const Header = styled.div`
