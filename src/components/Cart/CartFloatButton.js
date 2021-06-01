@@ -2,7 +2,7 @@ import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import { FontIcon } from "../../styles/style";
 
-const BasketButton = ({ setShowModal }) => {
+const CartFloatButton = ({ setShowModal }) => {
 	return (
 		<Container onClick={() => setShowModal(true)}>
 			<span>
@@ -16,7 +16,7 @@ const BasketButton = ({ setShowModal }) => {
 	);
 };
 
-export default BasketButton;
+export default CartFloatButton;
 
 const Container = styled.button`
 	position: fixed;

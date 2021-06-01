@@ -1,32 +1,33 @@
-import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
-import { FontIcon, XButton } from "../../styles/style";
+import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
+
+import CartItem from "./CartItem";
 // import Overlay from "../UI/Overlay";
-import BasketItem from "./BasketItem";
+import { FontIcon, XButton } from "../../styles/style";
 
-const BasketModal = ({ showModal, setShowModal }) => {
+const CartPanel = ({ showModal, setShowModal }) => {
 
-	const closeModal = () => {
+	const closePanel = () => {
 		setShowModal(false);
 	};
 
 	return (
 		<>
 			{/* {showModal && <Overlay onClick={closeModal} />} */}
-			<BasketModalStyle showModal={showModal}>
+			<CartPanelStyle showModal={showModal}>
 				<Header>
-					<CloseModal onClick={closeModal}>X</CloseModal>
+					<ClosePanel onClick={closePanel}>X</ClosePanel>
 					<NumberOfItems>
 						<FontIcon icon={faShoppingBag} />
 					5 آیتم
 				</NumberOfItems>
 				</Header>
 				<Items>
-					<BasketItem />
-					<BasketItem />
-					<BasketItem />
-					<BasketItem />
-					<BasketItem />
+					<CartItem />
+					<CartItem />
+					<CartItem />
+					<CartItem />
+					<CartItem />
 				</Items>
 				<Buttons>
 					<VoucherBtn>ایا کد تخفیف دارید؟</VoucherBtn>
@@ -35,14 +36,14 @@ const BasketModal = ({ showModal, setShowModal }) => {
 						<span className="price">550,000 تومان</span>
 					</CheckoutButton>
 				</Buttons>
-			</BasketModalStyle>
+			</CartPanelStyle>
 		</>
 	);
 };
 
-export default BasketModal;
+export default CartPanel;
 
-const BasketModalStyle = styled.div.attrs(props => (
+const CartPanelStyle = styled.div.attrs(props => (
 	{
 		showModal: props.showModal
 	}
@@ -57,7 +58,8 @@ const BasketModalStyle = styled.div.attrs(props => (
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
+	z-index: 101;
+	
 	transition: transform .25s ease;
 	transform: translateX(${props => props.showModal ? '0%' : '-100%'});
 `;
@@ -76,7 +78,7 @@ const NumberOfItems = styled.div`
 	padding: 0 2rem;
 `;
 
-const CloseModal = styled(XButton)`
+const ClosePanel = styled(XButton)`
 	padding: 0 2rem;
 `;
 

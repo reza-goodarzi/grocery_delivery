@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import tempImg from '../../assets/images/Items/item1.jpg';
 import { FontIcon, XButton } from '../../styles/style';
 
-const BasketItem = () => {
+const CartItem = () => {
 	return (
 		<Item>
 			<Numbers>
@@ -25,7 +25,7 @@ const BasketItem = () => {
 	);
 };
 
-export default BasketItem;
+export default CartItem;
 
 const Item = styled.div`
 	color: var(--color-black);
