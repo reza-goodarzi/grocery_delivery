@@ -1,7 +1,6 @@
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 import pic from '../../../assets/images/products/fruits/fruit1.jpeg';
-import { FontIcon } from '../../../styles/style';
+import AddToCartButton from '../../UI/AddToCartButton';
 
 function ItemCard() {
 	return (
@@ -16,10 +15,7 @@ function ItemCard() {
 					<span className="weight">500 گرم</span>
 					<span className="price">2000 ت</span>
 				</PriceGroup>
-				<AddToCart>
-					<FontIcon icon={faShoppingCart} />
-					<span>افزودن به سبد</span>
-				</AddToCart>
+				<AddToCartButton />
 			</Detail>
 		</Card>
 	);
@@ -88,22 +84,5 @@ const PriceGroup = styled.div`
 		color: var(--color-primary);
 		font-size: 1.6rem;
 		font-weight: bold;
-	}
-`;
-
-const AddToCart = styled.button`
-	background-color: var(--color-primary);
-	color: var(--color-white);
-	border-radius: 3rem;
-
-	margin: 1rem 0;
-	display: flex;
-	justify-content: center;
-
-	transition: all .5s;
-
-	&:hover{
-		color: var(--color-white);
-		background-color: var(--color-primary);
 	}
 `;
