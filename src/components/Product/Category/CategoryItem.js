@@ -6,7 +6,6 @@ import { FontIcon } from "../../../styles/style";
 
 function CategoryItem({ image, name, subCategories }) {
 	const [showSubCategory, setShowSubCategory] = useState(false);
-
 	return (
 		<motion.div layout style={{ borderBottom: '1px solid #f1f1f1' }}>
 			<Category layout>
