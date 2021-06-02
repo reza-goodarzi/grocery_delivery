@@ -1,19 +1,22 @@
 import styled from 'styled-components';
-import pic from '../../../assets/images/products/fruits/fruit1.jpeg';
 import AddToCartButton from '../../UI/AddToCartButton';
 
-function ItemCard() {
+function ItemCard({ name, image, weight, price, discount }) {
+	console.log(image);
 	return (
 		<Card>
 			<Image>
-				<span>20%</span>
-				<img src={pic} alt="fruit" />
+				{discount > 0 && <span>{discount * 100}%</span>}
+				<img src={image} alt={name} />
 			</Image>
 			<Detail>
-				<span className="name">لیمو</span>
+				<span className="name">{name}</span>
 				<PriceGroup>
-					<span className="weight">500 گرم</span>
-					<span className="price">2000 ت</span>
+					<span className="weight">{weight >= 1 ? `${weight} کیلو گرم` : `${weight * 1000} گرم`}</span>
+					<div className="price">
+						{discount > 0 && <span className="without_discount">{price * 1000} ت</span>}
+						<span className="with_discount">{discount > 0 ? ((1 - discount) * price * 1000).toFixed() : price * 1000} ت</span>
+					</div>
 				</PriceGroup>
 				<AddToCartButton />
 			</Detail>
@@ -25,6 +28,7 @@ export default ItemCard;
 
 const Card = styled.div`
 	min-width: 20rem;
+	height: fit-content;
 	border-radius: 5px;
 	overflow: hidden;
 	background-color: #fff;
@@ -62,7 +66,7 @@ const Detail = styled.div`
 	}
 
 	.name{
-		font-size: 2.5rem;
+		font-size: 2rem;
 		font-weight: bold;
 		padding: 0 1rem;
 	}
@@ -81,8 +85,22 @@ const PriceGroup = styled.div`
 	}
 
 	.price{
-		color: var(--color-primary);
-		font-size: 1.6rem;
-		font-weight: bold;
+		position: relative;
+		
+		.with_discount{
+			color: var(--color-primary);
+			font-size: 1.6rem;
+			font-weight: bold;
+		}
+
+		.without_discount{
+			color: var(--color-secondary);
+			font-size: 1.2rem;
+			text-decoration: line-through;
+
+			position: absolute;
+			top: -2rem;
+			left: 0;
+		}
 	}
 `;
