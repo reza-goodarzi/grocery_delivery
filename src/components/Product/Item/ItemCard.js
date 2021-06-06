@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import AddToCartButton from '../../UI/AddToCartButton';
 
 function ItemCard({ name, image, weight, price, discount }) {
-	console.log(image);
 	return (
 		<Card>
 			<Image>

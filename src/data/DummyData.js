@@ -25,9 +25,9 @@ import vegetable12 from '../assets/images/products/vegetables/vegetable12.jpeg';
 // Fish
 import fish1 from '../assets/images/products/fish/fish1.jpeg';
 import fish2 from '../assets/images/products/fish/fish2.jpeg';
-import fish3 from '../assets/images/products/fish/fish1.jpeg';
-import fish4 from '../assets/images/products/fish/fish1.jpeg';
-import fish5 from '../assets/images/products/fish/fish1.jpeg';
+import fish3 from '../assets/images/products/fish/fish3.jpeg';
+import fish4 from '../assets/images/products/fish/fish4.jpeg';
+import fish5 from '../assets/images/products/fish/fish5.jpeg';
 
 // Meat
 import meat1 from '../assets/images/products/meat/meat1.jpeg';

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import CardPopOver from '../UI/CardPopOver';
 
 import styled from 'styled-components';
@@ -27,12 +27,14 @@ const flagData = [
 ];
 
 const LanguageButton = () => {
+	const containerRef = useRef();
 	const [showSelectLang, setShowSelectLang] = useState(false);
 	const [languageData, setLanguageData] = useState(flagData[0]);
 
 	// Show/hide Language List
 	function toggleSelectLanguage() {
-		setShowSelectLang(pervState => !pervState);
+		console.log('HI');
+		setShowSelectLang(!showSelectLang);
 	}
 
 	// Set current language data and render data
@@ -40,6 +42,22 @@ const LanguageButton = () => {
 		e.preventDefault();
 		setLanguageData(data);
 	}
+
+	useEffect(() => {
+		// Hide Card when user click outside CardPopOver component
+		function outsideClickHandler(event) {
+			console.log(containerRef);
+			if (containerRef.current && !containerRef.current.contains(event.target)) {
+				setShowSelectLang(false);
+			}
+		}
+
+		document.addEventListener('mousedown', outsideClickHandler);
+
+		return () => {
+			document.removeEventListener('mousedown', outsideClickHandler);
+		};
+	});
 
 	// Render language list
 	const languageList = (
@@ -58,15 +76,14 @@ const LanguageButton = () => {
 
 	return (
 		<>
-			<LanguageButtonStyle onClick={toggleSelectLanguage} >
+			<LanguageButtonStyle onClick={toggleSelectLanguage} ref={containerRef} >
 				<Flag src={languageData.src} alt={`Flag ${languageData.name}`} />
 				<span>{languageData.text}</span>
-
 				{showSelectLang && languageList}
 			</LanguageButtonStyle>
 		</>
-	)
-}
+	);
+};
 
 export default LanguageButton;
 

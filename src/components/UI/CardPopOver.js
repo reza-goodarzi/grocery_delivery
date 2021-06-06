@@ -1,32 +1,15 @@
-import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 const CardPopOver = ({ children, setToHide }) => {
-	const CardRef = useRef();
-
-	useEffect(() => {
-		// Hide Card when user click outside CardPopOver component
-		function outsideClickHandler(event) {
-			if (CardRef.current && !CardRef.current.contains(event.target)) {
-				setToHide(false);
-			}
-		}
-
-		document.addEventListener('mousedown', outsideClickHandler);
-
-		return () => {
-			document.removeEventListener('mousedown', outsideClickHandler);
-		}
-	}, [setToHide]);
 
 	return (
-		<Card ref={CardRef}>
+		<Card>
 			<List>
 				{children}
 			</List>
 		</Card>
-	)
-}
+	);
+};
 
 export default CardPopOver;
 
