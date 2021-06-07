@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
-const Overlay = ({ onClick }) => {
-	return (
-		<OverlayStyle onClick={onClick} />
-	);
+const Overlay = ({ children, onClick }) => {
+	return <OverlayStyle onClick={onClick}>{children}</OverlayStyle>;
 };
 
 export default Overlay;
@@ -16,4 +14,8 @@ const OverlayStyle = styled.div`
 	/* z-index: 3; */
 	width: 100%;
 	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
 `;

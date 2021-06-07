@@ -17,4 +17,8 @@ const ProductStyle = styled.section`
 	height: 100vh;
 	display: grid;
 	grid-template-columns: repeat(15, 1fr);
+	overflow-y: scroll;
+
+	position: sticky;
+	top: 0;
 `;

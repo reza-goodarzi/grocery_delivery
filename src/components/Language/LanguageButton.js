@@ -33,7 +33,6 @@ const LanguageButton = () => {
 
 	// Show/hide Language List
 	function toggleSelectLanguage() {
-		console.log('HI');
 		setShowSelectLang(!showSelectLang);
 	}
 
@@ -46,7 +45,6 @@ const LanguageButton = () => {
 	useEffect(() => {
 		// Hide Card when user click outside CardPopOver component
 		function outsideClickHandler(event) {
-			console.log(containerRef);
 			if (containerRef.current && !containerRef.current.contains(event.target)) {
 				setShowSelectLang(false);
 			}
