@@ -14,11 +14,8 @@ function Product() {
 export default Product;
 
 const ProductStyle = styled.section`
+	max-height: 100vh;
 	height: 100vh;
 	display: grid;
 	grid-template-columns: repeat(15, 1fr);
-	overflow-y: scroll;
-
-	position: sticky;
-	top: 0;
 `;

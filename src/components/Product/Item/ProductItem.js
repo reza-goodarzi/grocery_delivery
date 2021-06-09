@@ -37,4 +37,7 @@ const ProductItemStyle = styled.div`
 	justify-items: start;
 
 	padding: 2rem;
+
+	overflow-y: scroll;
+	max-height: 100vh;
 `;

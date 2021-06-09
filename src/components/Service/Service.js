@@ -26,6 +26,6 @@ const Container = styled.section`
 `;
 
 const Image = styled.img`
-	width: 32%;
+	width: 31%;
 	margin: 1rem;
 `;

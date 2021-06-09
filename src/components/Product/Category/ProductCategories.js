@@ -29,8 +29,5 @@ const ProductCategory = styled.div`
 	flex-direction: column;
 	padding: 4rem 3rem;
 	overflow-y: scroll;
-
-	position: sticky;
-	top: 0;
-	height: 100vh;
+	max-height: 100vh;
 `;
