@@ -20,6 +20,7 @@ function ProductItem() {
 					weight={item.weight}
 					price={item.price}
 					discount={item.discount}
+					description={item.description}
 				/>
 			))}
 		</ProductItemStyle>

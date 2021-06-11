@@ -59,10 +59,12 @@ const ChangeNumber = styled.div`
 
 	.number{
 		font-weight: bold;
+		padding: 0 1rem;
 	}
 
 	svg{
 		cursor: pointer;
 		padding: 0 1rem;
+		margin: 0;
 	}
 `;
