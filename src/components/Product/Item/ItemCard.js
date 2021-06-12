@@ -1,14 +1,11 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 import AddToCartButton from '../../UI/AddToCartButton';
-import ItemModal from './ItemModal';
 
-function ItemCard({ id, name, categoryName, description, image, weight, price, discount }) {
-	const [showModal, setShowModal] = useState(false);
+function ItemCard({ name, image, weight, price, discount, onClick }) {
 
 	return (
-		<Card onClick={() => setShowModal(!showModal)}>
-			<Image>
+		<Card>
+			<Image onClick={onClick}>
 				{discount > 0 && <span>{discount * 100}%</span>}
 				<img src={image} alt={name} />
 			</Image>
@@ -23,19 +20,6 @@ function ItemCard({ id, name, categoryName, description, image, weight, price, d
 				</PriceGroup>
 				<AddToCartButton />
 			</Detail>
-			{/* TODO fix close modal properly */}
-			{showModal &&
-				<ItemModal
-					id={id}
-					name={name}
-					categoryName={categoryName}
-					description={description}
-					image={image}
-					weight={weight}
-					price={price}
-					discount={discount}
-				/>
-			}
 		</Card>
 	);
 }

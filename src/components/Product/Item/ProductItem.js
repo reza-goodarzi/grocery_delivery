@@ -1,6 +1,8 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { DUMMY_DATA } from "../../../data/DummyData";
 import ItemCard from "./ItemCard";
+import ItemModal from "./ItemModal";
 
 // extract items data in one array
 
@@ -10,21 +12,43 @@ const items = DUMMY_DATA.map((data) => {
 
 // TODO when we have 1 item change grid-template-columns to repeat(auto-fit, 20rem)
 function ProductItem() {
+	const [selectedItem, setSelectedItem] = useState(null);
+	const [showModal, setShowModal] = useState(true);
+
+	function setItem(id) {
+		const newItem = items.filter(item => item.id === id)[0];
+		setSelectedItem(newItem);
+		setShowModal(true);
+		// console.log(selectedItem);
+	}
+
 	return (
 		<ProductItemStyle>
 			{items.map(item => (
 				<ItemCard
+					onClick={() => { setItem(item.id); }}
 					key={item.id}
 					id={item.id}
 					name={item.name}
-					categoryName={item.categoryName}
-					description={item.description}
 					image={item.image}
 					weight={item.weight}
 					price={item.price}
 					discount={item.discount}
 				/>
 			))}
+			{/* TODO fix close modal properly */}
+			{showModal && selectedItem &&
+				<ItemModal
+					setShowModal={setShowModal}
+					name={selectedItem.name}
+					categoryName={selectedItem.categoryName}
+					description={selectedItem.description}
+					image={selectedItem.image}
+					weight={selectedItem.weight}
+					price={selectedItem.price}
+					discount={selectedItem.discount}
+				/>
+			}
 		</ProductItemStyle>
 	);
 }

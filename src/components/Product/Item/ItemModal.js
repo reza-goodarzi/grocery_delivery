@@ -8,10 +8,10 @@ import pic3 from '../../../assets/images/products/fruits/fruit4.jpeg';
 import pic4 from '../../../assets/images/products/fruits/fruit5.jpeg';
 import AddToCartButton from "../../UI/AddToCartButton";
 
-function ItemModal({ id, name, categoryName, description, image, weight, price, discount }) {
+function ItemModal({ name, categoryName, description, image, weight, price, discount, setShowModal }) {
 
 	return (
-		<Modal>
+		<Modal onClick={() => setShowModal(false)}>
 			<Container>
 				<RightSide>
 					{discount > 0 && <span>{discount * 100}%</span>}
