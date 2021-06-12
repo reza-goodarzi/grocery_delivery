@@ -36,7 +36,6 @@ function ProductItem() {
 					discount={item.discount}
 				/>
 			))}
-			{/* TODO fix close modal properly */}
 			{showModal && selectedItem &&
 				<ItemModal
 					setShowModal={setShowModal}

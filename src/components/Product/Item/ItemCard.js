@@ -37,6 +37,8 @@ const Card = styled.div`
 
 const Image = styled.div`
 	position: relative;
+	cursor: pointer;
+	
 	span{
 		position: absolute;
 		top: 1rem;
