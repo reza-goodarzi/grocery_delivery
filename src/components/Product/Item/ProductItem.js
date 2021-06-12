@@ -14,7 +14,7 @@ function ProductItem() {
 		<ProductItemStyle>
 			{items.map(item => (
 				<ItemCard
-					key={Math.random() * 5000}
+					key={item.id}
 					name={item.name}
 					image={item.image}
 					weight={item.weight}
