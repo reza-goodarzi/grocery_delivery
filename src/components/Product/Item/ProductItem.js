@@ -15,12 +15,14 @@ function ProductItem() {
 			{items.map(item => (
 				<ItemCard
 					key={item.id}
+					id={item.id}
 					name={item.name}
+					categoryName={item.categoryName}
+					description={item.description}
 					image={item.image}
 					weight={item.weight}
 					price={item.price}
 					discount={item.discount}
-					description={item.description}
 				/>
 			))}
 		</ProductItemStyle>

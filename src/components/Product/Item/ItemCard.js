@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import AddToCartButton from '../../UI/AddToCartButton';
 import ItemModal from './ItemModal';
 
-function ItemCard({ name, description, image, weight, price, discount }) {
+function ItemCard({ id, name, categoryName, description, image, weight, price, discount }) {
 	const [showModal, setShowModal] = useState(false);
 
 	return (
@@ -26,8 +26,10 @@ function ItemCard({ name, description, image, weight, price, discount }) {
 			{/* TODO fix close modal properly */}
 			{showModal &&
 				<ItemModal
-					description={description}
+					id={id}
 					name={name}
+					categoryName={categoryName}
+					description={description}
 					image={image}
 					weight={weight}
 					price={price}

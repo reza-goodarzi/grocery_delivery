@@ -8,7 +8,7 @@ import pic3 from '../../../assets/images/products/fruits/fruit4.jpeg';
 import pic4 from '../../../assets/images/products/fruits/fruit5.jpeg';
 import AddToCartButton from "../../UI/AddToCartButton";
 
-function ItemModal({ name, description, image, weight, price, discount }) {
+function ItemModal({ id, name, categoryName, description, image, weight, price, discount }) {
 
 	return (
 		<Modal>
@@ -29,15 +29,14 @@ function ItemModal({ name, description, image, weight, price, discount }) {
 					<p className="weight">{weight >= 1 ? `${weight} کیلو گرم` : `${weight * 1000} گرم`}</p>
 					<p className="description">{description}</p>
 					<div className="category">
-						<span>Category</span>
-						<span>Category</span>
+						<span>{categoryName}</span>
 					</div>
 					<div className="buy">
 						<div className="price">
-							{discount > 0 && <span className="without_discount">{price * 1000} ت</span>}
 							<span className="with_discount">
 								{discount > 0 ? ((1 - discount) * price * 1000).toFixed() : price * 1000} ت
 							</span>
+							{discount > 0 && <span className="without_discount">{price * 1000} ت</span>}
 						</div>
 						<AddToCartButton />
 					</div>
@@ -137,5 +136,4 @@ const LeftSide = styled.div`
 			}
 		}
 	}
-
 `;
