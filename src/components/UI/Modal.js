@@ -11,11 +11,13 @@ const portalEl = document.getElementById('overlay');
 function Modal({ children, onClick }) {
 
 	const modal = (
-		<Overlay onClick={onClick}>
+		<>
+			<Overlay onClick={onClick}>
+			</Overlay>
 			<ModalStyle>
 				{children}
 			</ModalStyle>
-		</Overlay>
+		</>
 	);
 
 	return (
@@ -33,14 +35,15 @@ const OverlayStyle = styled.div`
 	z-index: 3;
 	width: 100%;
 	height: 100%;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
 `;
 
 const ModalStyle = styled.div`
-	position: fixed;	
+	position: fixed;
+	top: 50%;
+	left: 50%;	
+	transform: translate(-50%, -50%);
 	border-radius: 5px;
-	max-width: 65%;
+	width: 65%;
+	z-index: 5;
+
 `;
