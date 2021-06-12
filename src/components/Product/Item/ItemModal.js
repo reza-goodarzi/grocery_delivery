@@ -14,6 +14,7 @@ function ItemModal({ name, description, image, weight, price, discount }) {
 		<Modal>
 			<Container>
 				<RightSide>
+					{discount > 0 && <span>{discount * 100}%</span>}
 					<Image src={image} alt="Pic" />
 					<div className='thumb_image'>
 						<img src={pic} alt="pic" />
@@ -60,6 +61,19 @@ const Container = styled.div`
 
 const RightSide = styled.div`
 	width: 50%;
+
+	span{
+		position: absolute;
+		top: 5rem;
+		right: 6rem;
+
+		background-color: var(--color-secondary);
+		padding: 3px 10px;
+		border-radius: 12px;
+		color: var(--color-white);
+		font-weight: bold;
+		font-size: 1.3rem;
+	}
 
 	.thumb_image{
 		overflow: scroll;
