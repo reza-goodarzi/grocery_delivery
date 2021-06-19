@@ -4,7 +4,8 @@ import styled from "styled-components";
 
 export const NavLinkStyle = styled(NavLink)`
       padding: 5px 2rem;
-	&.active,
+		
+		&.active,
       &:hover{
 		color: var(--color-primary);
 	}
@@ -14,7 +15,7 @@ export const FontIcon = styled(FontAwesomeIcon)`
 	margin-left: 5px;
 `;
 
-export const XButton = styled.button`
+export const CircleButton = styled.button`
 	padding: 1rem;
 	color: #888;
 	cursor: pointer;

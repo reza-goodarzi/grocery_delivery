@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const CardPopOver = ({ children, setToHide }) => {
+const CardPopOver = ({ children }) => {
 
 	return (
 		<Card>

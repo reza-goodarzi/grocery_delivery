@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Header from './components/Header/Header';
-import Home from './pages/Home';
-// import Profile from './pages/Profile';
+// import Home from './pages/Home';
+import Checkout from './pages/Checkout';
 import GlobalStyle from './styles/globalStyle';
 
 function App() {
@@ -10,8 +10,8 @@ function App() {
     <BrowserRouter>
       <GlobalStyle />
       <Header />
-      <Home />
-      {/* <Profile /> */}
+      {/* <Home /> */}
+      <Checkout />
     </BrowserRouter>
   );
 }

@@ -124,8 +124,9 @@ const LeftSide = styled.div`
 
 		.price{
 			.with_discount{
-			font-size: 2rem;
-			color: var(--color-primary);
+				font-size: 2rem;
+				font-weight: bold;
+				color: var(--color-primary);
 			}
 
 			.without_discount{

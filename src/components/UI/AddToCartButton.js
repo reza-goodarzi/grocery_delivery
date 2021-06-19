@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { FontIcon } from "../../styles/style";
 
 function AddToCartButton() {
-	const [show, setShow] = useState(true);
+	const [show, setShow] = useState(false);
 	return (
 		<AddToCart onClick={() => setShow(!show)}>
 			{!show &&
