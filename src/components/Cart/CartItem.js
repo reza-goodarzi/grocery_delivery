@@ -2,7 +2,7 @@
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 import tempImg from '../../assets/images/Items/item1.jpg';
-import { FontIcon, XButton } from '../../styles/style';
+import { CircleButton, FontIcon } from '../../styles/style';
 
 const CartItem = () => {
 	return (
@@ -20,7 +20,7 @@ const CartItem = () => {
 				<span className="price">25000 تومان</span>
 			</Details>
 			<TotalPrice>50,000 تومان</TotalPrice>
-			<XButton>X</XButton>
+			<CircleButton>X</CircleButton>
 		</Item>
 	);
 };

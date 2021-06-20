@@ -56,7 +56,6 @@ const ModalStyle = styled.div`
 	left: 50%;	
 	transform: translate(-50%, -50%);
 	border-radius: 5px;
-	width: 65%;
 	z-index: 5;
 	animation: ${showModal} .15s linear forwards;
 `;

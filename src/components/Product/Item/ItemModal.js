@@ -56,6 +56,7 @@ const Container = styled.div`
 	background-color: #fff;
 	display: flex ;
 	padding: 5rem 7rem;
+	width: 75rem;
 `;
 
 const RightSide = styled.div`

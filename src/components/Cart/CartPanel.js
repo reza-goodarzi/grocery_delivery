@@ -3,7 +3,7 @@ import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 
 import CartItem from "./CartItem";
 // import Overlay from "../UI/Overlay";
-import { FontIcon, XButton } from "../../styles/style";
+import { CircleButton, FontIcon } from "../../styles/style";
 
 const CartPanel = ({ showModal, setShowModal }) => {
 
@@ -19,8 +19,8 @@ const CartPanel = ({ showModal, setShowModal }) => {
 					<ClosePanel onClick={closePanel}>X</ClosePanel>
 					<NumberOfItems>
 						<FontIcon icon={faShoppingBag} />
-					5 آیتم
-				</NumberOfItems>
+						5 آیتم
+					</NumberOfItems>
 				</Header>
 				<Items>
 					<CartItem />
@@ -78,7 +78,7 @@ const NumberOfItems = styled.div`
 	padding: 0 2rem;
 `;
 
-const ClosePanel = styled(XButton)`
+const ClosePanel = styled(CircleButton)`
 	padding: 0 2rem;
 `;
 

@@ -28,9 +28,10 @@ const GlobalStyle = createGlobalStyle`
 
 		--shadow-light: 0 0 3rem #00000003;
 		--shadow-dark: 0 3rem 5rem #00000005;
+		--shadow-darker: 0 1rem 2rem #00000020;
 	}
 
-	html, button, a ,input{
+	html, button, a ,input, textarea{
 		font-family: 'shabnam';
 		font-size: 62.5%;
 		font-weight: normal;
@@ -102,6 +103,7 @@ const GlobalStyle = createGlobalStyle`
 
 		display: flex;
       align-items: center;
+		justify-content: center;
 		transition: color .2s ease-in;
 
 		&:hover{
@@ -110,13 +112,15 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 /* ---------------------------------- Input --------------------------------- */
-	input{
-		width: 100%;
+	input, textarea{
+		width: -webkit-fill-available;
 		font-size: 1.6rem;
 		padding: 1.5rem 1rem;
 		border: none;
 		box-shadow: var(--shadow-dark);
 		border-radius: 5px;
+		resize: none;
+
 
 		&::placeholder{
 			color: var(--color-gray)

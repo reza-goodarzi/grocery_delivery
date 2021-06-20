@@ -27,7 +27,12 @@ const CardStyle = styled.div.attrs(props => ({
 	background-color: ${props => props.selectedCard ? '#fff' : '#eee'};
 	border: ${props => props.selectedCard ? 'solid 1px var(--color-primary)' : "solid 1px transparent"};
 	padding: 1rem 2rem;
-	width: 15rem;
+	margin: 1rem;
+
+	min-width: 15rem;
+	max-width: 15.5rem;
+	flex: 1;
+
 	border-radius: 5px;
 
 
