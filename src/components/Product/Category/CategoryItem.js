@@ -70,5 +70,6 @@ const SubCategories = styled.div`
 		width: 100%;
 		padding: 1rem 0;
 		font-weight: 200;
+		justify-content: start;
 	}
 `;
