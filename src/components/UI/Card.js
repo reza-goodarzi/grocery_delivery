@@ -2,17 +2,17 @@ import { faPen, faTimes } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import { FontIcon, CircleButton } from "../../styles/style";
 
-function Card({ title, subtitle, showButtons = true, selected }) {
+function Card({ title, subtitle, showButtons = true, selected, onSelect, onDelete, onEdit }) {
 	return (
-		<CardStyle selectedCard={false}>
+		<CardStyle selectedCard={selected} onClick={onSelect}>
 			<div>
 				<h3>{title}</h3>
 				<p>{subtitle}</p>
 			</div>
 			{showButtons &&
 				<div className="buttons">
-					<CircleButtonStyle bgColor='red' ><FontIcon icon={faTimes} /></CircleButtonStyle>
-					<CircleButtonStyle bgColor='var(--color-primary)' ><FontIcon icon={faPen} /></CircleButtonStyle>
+					<CircleButtonStyle onClick={onDelete} bgColor='red' ><FontIcon icon={faTimes} /></CircleButtonStyle>
+					<CircleButtonStyle onClick={onEdit} bgColor='var(--color-primary)' ><FontIcon icon={faPen} /></CircleButtonStyle>
 				</div>
 			}
 		</CardStyle>
@@ -24,7 +24,7 @@ export default Card;
 const CardStyle = styled.div.attrs(props => ({
 	selectedCard: props.selectedCard
 }))`
-	background-color: ${props => props.selectedCard ? '#fff' : '#eee'};
+	background-color: ${props => props.selectedCard ? '#fff' : 'var(--color-white)'};
 	border: ${props => props.selectedCard ? 'solid 1px var(--color-primary)' : "solid 1px transparent"};
 	padding: 1rem 2rem;
 	margin: 1rem;
@@ -37,14 +37,14 @@ const CardStyle = styled.div.attrs(props => ({
 
 
 	position: relative;
+	transition: all .2s ease;
 
 	h3{
-		font-size: 1.3rem;
+		font-size: 1.5rem;
 		font-weight: bold;
 	}
 
 	p{
-		color: #555;
 		font-weight: 300;
 	}
 

@@ -57,5 +57,5 @@ const ModalStyle = styled.div`
 	transform: translate(-50%, -50%);
 	border-radius: 5px;
 	z-index: 5;
-	animation: ${showModal} .15s linear forwards;
+	animation: ${showModal} .2s linear forwards ;
 `;
