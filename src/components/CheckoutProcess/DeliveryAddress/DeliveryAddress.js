@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { ErrorMessage } from "../../../styles/style";
 
 import Card from "../../UI/Card";
 import Container from "../../UI/Container";
 import CheckoutModal from "../CheckoutModal";
+
 
 function DeliveryAddress() {
 	const [addresses, setAddresses] = useState(JSON.parse(localStorage.getItem('addresses')) || []);
@@ -11,13 +13,19 @@ function DeliveryAddress() {
 	const [currentId, setCurrentId] = useState('');
 	const [showModal, setShowModal] = useState(false);
 	const [isOnEdit, setIsOnEdit] = useState(false);
+	const [error, setError] = useState({ hasError: false, message: '' });
 
 	// add new address to our addresses and save it in localStorage
 	function addAddressHandler() {
-		if (!title || !address) return;
+		if (isAddressExist()) {
+			setError({ hasError: true, message: 'این ادرس وجود دارد' });
+			return;
+		}
 
-		if (isAddressExist()) return;
-
+		if (!title || !address) {
+			setError({ hasError: true, message: 'لطفا تمام فیلد ها را کامل کنید' });
+			return;
+		}
 		const newAddresses = [
 			...addresses,
 			{
@@ -32,8 +40,12 @@ function DeliveryAddress() {
 		setShowModal(false); // hide modal
 	}
 
+
 	function editAddressesHandler() {
-		if (!title || !address) return;
+		if (!title || !address) {
+			setError({ hasError: true, message: 'لطفا تمام فیلد ها را کامل کنید' });
+			return;
+		}
 
 		const newAddresses = addresses.map(prevAddress => (
 			prevAddress.id === currentId ? {
@@ -80,6 +92,7 @@ function DeliveryAddress() {
 		changeAddresses(newAddresses);
 	}
 
+	// delete address use want
 	function onDeleteHandler(e, curAddress) {
 		e.stopPropagation();
 
@@ -92,6 +105,7 @@ function DeliveryAddress() {
 		changeAddresses(newAddresses);
 	}
 
+	// edit address use want
 	function onEditHandler(e, address) {
 		e.stopPropagation();
 
@@ -99,6 +113,7 @@ function DeliveryAddress() {
 		setTitle(address.title);
 		setIsOnEdit(true);
 		setShowModal(true);
+		setError({ hasError: false, message: '' });
 
 		setCurrentId(address.id);
 	}
@@ -108,8 +123,8 @@ function DeliveryAddress() {
 		setIsOnEdit(false);
 		setAddress('');
 		setTitle('');
+		setError({ hasError: false, message: '' });
 	}
-
 
 	return (
 		<div>
@@ -144,6 +159,7 @@ function DeliveryAddress() {
 					title={isOnEdit ? 'ویرایش آدرس' : 'اضافه کردن آدرس جدید'}
 					textButton='ذخیره ادرس'
 				>
+					{error.hasError && <ErrorMessage>{error.message}</ErrorMessage>}
 					<input type="text" placeholder='عنوان خود را وارد کنید' onChange={changeTitleHandler} value={title} />
 					<textarea type="text" placeholder='آدرس خود را وارد کنید' onChange={changeAddressHandler} value={address} />
 				</CheckoutModal>

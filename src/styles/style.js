@@ -24,3 +24,7 @@ export const CircleButton = styled.button`
 		color: red;
 	}
 `;
+
+export const ErrorMessage = styled.p`
+	color: var(--color-red);
+`;
