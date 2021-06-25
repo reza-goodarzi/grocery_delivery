@@ -2,15 +2,15 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import { FontIcon } from "../../styles/style";
 
-function Container({ children, title, showNumber, number, showButton, textButton, onClick }) {
+function Container({ children, title, number, textButton, onClick }) {
 	return (
 		<ContainerStyle>
 			<div className="header">
 				<div className="title">
-					{showNumber && <span>{number}</span>}
+					{number && <span>{number}</span>}
 					<h3>{title}</h3>
 				</div>
-				{showButton && <button onClick={onClick}><FontIcon icon={faPlus} /> {textButton}</button>}
+				{textButton && <button onClick={onClick}><FontIcon icon={faPlus} /> {textButton}</button>}
 			</div>
 			<div className="body">
 				{children}

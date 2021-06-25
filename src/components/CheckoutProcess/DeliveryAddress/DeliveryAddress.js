@@ -131,9 +131,7 @@ function DeliveryAddress() {
 			<Container
 				onClick={onAddAddressHandler}
 				title="نشانی"
-				showNumber
 				number='1'
-				showButton
 				textButton="اضافه کردن"
 			>
 				{addresses.length !== 0 ?
