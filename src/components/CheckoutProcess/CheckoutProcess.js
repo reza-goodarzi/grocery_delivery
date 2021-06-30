@@ -2,6 +2,7 @@ import styled from "styled-components";
 import ContactNumber from "./ContactNumber/ContactNumber";
 import DeliveryAddress from "./DeliveryAddress/DeliveryAddress";
 import DeliverySchedule from "./DeliverySchedule/DeliverySchedule";
+import PaymentOption from "./PaymentOption/PaymentOption";
 
 function CheckoutProcess() {
 	return (
@@ -9,6 +10,7 @@ function CheckoutProcess() {
 			<DeliveryAddress />
 			<DeliverySchedule />
 			<ContactNumber />
+			<PaymentOption />
 		</CheckoutProcessStyled>
 	);
 }
