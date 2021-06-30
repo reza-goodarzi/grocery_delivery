@@ -1,44 +1,31 @@
+import { useState } from "react";
+import { schedulesData } from "../../../data/schedulesData";
 import Card from "../../UI/Card";
 import Container from "../../UI/Container";
 
-const schedules = [
-	{
-		type: 'تحویل فوری',
-		detail: 'تحویل فوری در 90 دقیقه🔥'
-	},
-	{
-		type: 'از ساعت 8 تا 11',
-		detail: 'تحویل از 8 صبح تا 11 صبح',
-	},
-	{
-		type: 'از ساعت 11 تا 14',
-		detail: 'تحویل از 11 صبح تا 14 بعد از ظهر',
-
-	},
-	{
-		type: 'از ساعت 15 تا 17',
-		detail: 'تحویل از 15 بعد از ظهر تا 17 بعد از ظهر',
-
-	},
-	{
-		type: 'از ساعت 17 تا 20',
-		detail: 'تحویل از 5 بعد از ظهر تا 20 بعد از ظهر',
-
-	},
-	{
-		type: 'روز بعد',
-		detail: 'اولین تحویل روز بعد',
-	},
-];
-
 function DeliverySchedule() {
+	const [schedules, setSchedules] = useState(schedulesData);
+
+	function onSelectHandler(index) {
+		const newSchedules = schedules.map((schedule, i) => (
+			i === index ?
+				{ ...schedule, selected: true } :
+				{ ...schedule, selected: false }
+		));
+
+		setSchedules(newSchedules);
+	}
+
 	return (
 		<Container
 			number='2'
 			title='زمان بندی تحویل'
 		>
-			{schedules.map(schedule => (
+			{schedules.map((schedule, index) => (
 				<Card
+					key={index}
+					onSelect={() => onSelectHandler(index)}
+					selected={schedule.selected}
 					title={schedule.type}
 					subtitle={schedule.detail}
 					showButtons={false}

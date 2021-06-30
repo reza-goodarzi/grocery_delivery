@@ -11,11 +11,11 @@ import shabnamWoff2 from '../assets/fonts/Shabnam-Bold-FD.woff2';
 const GlobalStyle = createGlobalStyle`
 
 	@font-face {
-		font-family: 'shabnam-bold';
-		src: url(${shabnamEOT}) format('embedded-opentype');
-		src: url(${shabnamTTF}) format('truetype'),
+		font-family: shabnam-bold;
+		src: url(${shabnamEOT});
+		src: url(${shabnamWoff2}) format('woff'),
 		url(${shabnamWoff}) format('woff'),
-		url(${shabnamWoff2}) format('woff2');
+		url(${shabnamTTF});
 	}
 
 	:root{
@@ -33,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 	html, button, a ,input, textarea{
-		font-family: 'shabnam';
+		font-family: 'Shabnam FD', sans-serif;
 		font-size: 62.5%;
 		font-weight: normal;
 		color: var(--color-black);
