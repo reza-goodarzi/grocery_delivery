@@ -127,7 +127,7 @@ function DeliveryAddress() {
 	}
 
 	return (
-		<div>
+		<>
 			<Container
 				onClick={onAddAddressHandler}
 				title="نشانی"
@@ -162,7 +162,7 @@ function DeliveryAddress() {
 					<textarea type="text" placeholder='آدرس خود را وارد کنید' onChange={changeAddressHandler} value={address} />
 				</CheckoutModal>
 			}
-		</div>
+		</>
 	);
 }
 
