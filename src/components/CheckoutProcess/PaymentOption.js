@@ -1,9 +1,9 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { ErrorMessage } from "../../../styles/style";
-import Card from "../../UI/Card";
-import Container from "../../UI/Container";
-import CheckoutModal from "../CheckoutModal";
+import { ErrorMessage } from "../../styles/style";
+import Card from "../UI/Card";
+import Container from "../UI/Container";
+import CheckoutModal from "./CheckoutModal";
 
 function PaymentOption() {
 	const [cards, setCards] = useState(JSON.parse(localStorage.getItem('cards')) || []);

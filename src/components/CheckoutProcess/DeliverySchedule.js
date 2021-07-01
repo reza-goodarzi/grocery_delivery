@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { schedulesData } from "../../../data/schedulesData";
-import Card from "../../UI/Card";
-import Container from "../../UI/Container";
+import { schedulesData } from "../../data/schedulesData";
+import Card from "../UI/Card";
+import Container from "../UI/Container";
 
 function DeliverySchedule() {
 	const [schedules, setSchedules] = useState(schedulesData);

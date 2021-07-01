@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import ContactNumber from "./ContactNumber/ContactNumber";
-import DeliveryAddress from "./DeliveryAddress/DeliveryAddress";
-import DeliverySchedule from "./DeliverySchedule/DeliverySchedule";
-import PaymentOption from "./PaymentOption/PaymentOption";
+import DeliveryAddress from './DeliveryAddress';
+import DeliverySchedule from "./DeliverySchedule";
+import ContactNumber from "./ContactNumber";
+import PaymentOption from "./PaymentOption";
 
 function CheckoutProcess() {
 	return (

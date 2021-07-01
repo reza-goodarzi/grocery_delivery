@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { ErrorMessage } from "../../../styles/style";
-import Card from "../../UI/Card";
-import Container from "../../UI/Container";
-import CheckoutModal from "../CheckoutModal";
+import { ErrorMessage } from "../../styles/style";
+import Card from "../UI/Card";
+import Container from "../UI/Container";
+import CheckoutModal from "./CheckoutModal";
 
 function ContactNumber() {
 	const [numbers, setNumbers] = useState(JSON.parse(localStorage.getItem('numbers')) || []);

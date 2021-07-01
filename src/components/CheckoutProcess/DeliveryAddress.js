@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { ErrorMessage } from "../../../styles/style";
+import { ErrorMessage } from "../../styles/style";
 
-import Card from "../../UI/Card";
-import Container from "../../UI/Container";
-import CheckoutModal from "../CheckoutModal";
+import Card from "../UI/Card";
+import Container from "../UI/Container";
+import CheckoutModal from "./CheckoutModal";
 
 
 function DeliveryAddress() {
