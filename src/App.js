@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Header from './components/Header/Header';
-import Offers from './pages/Offers';
 // import Home from './pages/Home';
 // import Checkout from './pages/Checkout';
+// import Offers from './pages/Offers';
+import Faq from './pages/Faq';
 import GlobalStyle from './styles/globalStyle';
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
       <Header />
       {/* <Home /> */}
       {/* <Checkout /> */}
-      <Offers />
+      {/* <Offers /> */}
+      <Faq />
     </BrowserRouter>
   );
 }
