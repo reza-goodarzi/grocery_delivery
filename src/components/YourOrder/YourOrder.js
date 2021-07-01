@@ -21,6 +21,7 @@ const YourOrderStyled = styled.div`
 
 	position: sticky;
 	top: 0;
+	
 	margin-right: 3rem;
 	h2{
 		text-align: center;
