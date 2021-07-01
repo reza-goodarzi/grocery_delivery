@@ -17,4 +17,12 @@ export default YourOrder;
 
 const YourOrderStyled = styled.div`
 	margin: 2rem;
+	height: 100vh;
+
+	position: sticky;
+	top: 0;
+	margin-right: 3rem;
+	h2{
+		text-align: center;
+	}
 `;

@@ -20,7 +20,7 @@ function YourOrderList() {
 export default YourOrderList;
 
 const Container = styled.div`
-	height: 30%;
+	height: 50vh;
 	overflow-y: scroll;
 	margin: 3rem 0;
 	border-bottom: 1px solid #ddd;
