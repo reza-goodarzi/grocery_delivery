@@ -44,5 +44,9 @@ const CouponInputBox = styled.div`
 		color: var(--color-white);
 		margin: 0 2rem;
 		padding: 1rem 3rem;
+
+		&:hover{
+			color: var(--color-white);
+		}
 	}
 `;

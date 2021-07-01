@@ -1,9 +1,13 @@
 import styled from "styled-components";
+import YourOrderList from "./YourOrderList";
+import YourBill from "./YourBill";
 
 function YourOrder() {
 	return (
 		<YourOrderStyled>
-			YourOrder
+			<h2>سفارش های شما</h2>
+			<YourOrderList />
+			<YourBill />
 		</YourOrderStyled>
 	);
 }

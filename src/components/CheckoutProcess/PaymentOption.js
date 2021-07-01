@@ -121,12 +121,6 @@ function PaymentOption() {
 		setCardInput(e.target.value);
 	}
 
-	// function showCreditCard(creditCard) {
-	// 	const secretCreditCard = `**** **** **** ${creditCard.slice(creditCard.length - 4, -1)}`;
-	// 	console.log(secretCreditCard);
-	// 	return secretCreditCard;
-	// }
-
 	return (
 		<>
 			<Container
@@ -184,12 +178,6 @@ const Buttons = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-`;
-
-const VoucherBtn = styled.button`
-	color: var(--color-primary);
-	font-weight: 500;
-	margin-bottom: 1rem;
 `;
 
 const CheckoutButton = styled.button`
