@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ErrorMessage } from "../../styles/style";
 import Card from "../UI/Card";
 import Container from "../UI/Container";
+import VoucherButton from "../VoucherButton/VoucherButton";
 import CheckoutModal from "./CheckoutModal";
 
 function PaymentOption() {
@@ -151,7 +152,7 @@ function PaymentOption() {
 
 				{/* TODO TEMP (MUST Completely Change) */}
 				<Buttons>
-					<VoucherBtn>ایا کد تخفیف دارید؟</VoucherBtn>
+					<VoucherButton />
 					<CheckoutButton>
 						<span className="text">پرداخت</span>
 						<span className="price">550,000 تومان</span>
