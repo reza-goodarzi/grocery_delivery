@@ -6,7 +6,8 @@ import Header from './components/Header/Header';
 // import Checkout from './pages/Checkout';
 // import Offers from './pages/Offers';
 // import Faq from './pages/Faq';
-import NotFound from './pages/NotFound';
+// import NotFound from './pages/NotFound';
+import OrderReceived from './pages/OrderReceived';
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
       {/* <Checkout /> */}
       {/* <Offers /> */}
       {/* <Faq /> */}
-      <NotFound />
+      <OrderReceived />
+      {/* <NotFound /> */}
     </BrowserRouter>
   );
 }
