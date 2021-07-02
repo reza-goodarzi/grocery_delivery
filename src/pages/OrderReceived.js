@@ -6,10 +6,11 @@ function OrderReceived() {
 			<BackHome>بازگشت به خانه</BackHome>
 
 			<div>
-				<div className="title">
+				<div>
 					<h2>سفارش دریافت شد</h2>
 					<p>متشکرم. سفارش شما دریافت شد</p>
 				</div>
+
 				<OrderReceivedStyle>
 					<span className="order_number">
 						<h3>شماره سفارش</h3>
@@ -84,7 +85,7 @@ const Container = styled.section`
 	background-color: #fff;
 	border-radius: 5px;
 	border: 1px solid #00000010;
-	/* box-shadow: 0 0 1rem #00000005; */
+	box-shadow: 0 0 1rem #00000005;
 	margin: 2rem 30rem;
 	padding: 3rem 7rem;
 
@@ -101,6 +102,7 @@ const OrderReceivedStyle = styled.div`
 	display: flex;
 	width: 100%;
 	margin-bottom: 5rem;
+	margin-top: 2rem;
 
 	span{
 		/* margin-left: 3rem; */
@@ -116,7 +118,8 @@ const OrderReceivedStyle = styled.div`
 `;
 
 const Details = styled.div`
-	margin-bottom: 5rem ;
+	margin-bottom: 5rem;
+
 	span{
 		display: flex;
 		align-items: center;
