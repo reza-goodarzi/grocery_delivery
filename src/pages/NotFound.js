@@ -13,8 +13,7 @@ export default NotFound;
 
 const NotFoundStyle = styled.section`
 	width: 100%;
-	height: 88vh;
-	background-color: #fff;
+	height: 70vh;
 	
 	display: flex;
 	flex-direction: column;
@@ -22,7 +21,7 @@ const NotFoundStyle = styled.section`
 	align-items: center;
 
 	h1{
-		font-size: 20rem;
+		font-size: 20rem;	
 	}
 
 	h2{
