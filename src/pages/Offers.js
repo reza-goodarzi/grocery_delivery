@@ -6,8 +6,9 @@ function Offers() {
 	return (
 		<OffersStyle>
 			<h1>🔥تخفیفات ویژه فروشگاه ما🔥</h1>
-			{offersData.map(offer => (
+			{offersData.map((offer, index) => (
 				<Card
+					key={index}
 					title={offer.coupon}
 					subtitle={offer.info}
 					selected

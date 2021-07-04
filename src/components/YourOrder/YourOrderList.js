@@ -4,8 +4,8 @@ function YourOrderList() {
 
 	return (
 		<Container>
-			{data.map(() => (
-				<List>
+			{data.map((_, index) => (
+				<List key={index}>
 					<p className="quantity">1</p>
 					<p className="divider">x</p>
 					<p className="name">گوشت قرمز</p>

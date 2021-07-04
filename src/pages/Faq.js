@@ -6,8 +6,8 @@ function Faq() {
 	return (
 		<FaqStyle>
 			<h1>سوالات متداول</h1>
-			{faqData.map(faq => (
-				<Accordion question={faq.question} answer={faq.answer} />
+			{faqData.map((faq, index) => (
+				<Accordion key={index} question={faq.question} answer={faq.answer} />
 			))}
 		</FaqStyle>
 	);
