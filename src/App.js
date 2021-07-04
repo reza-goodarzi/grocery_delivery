@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import GlobalStyle from './styles/globalStyle';
 import Header from './components/Header/Header';
 import Home from './pages/Home';
@@ -14,12 +14,33 @@ function App() {
     <BrowserRouter>
       <GlobalStyle />
       <Header />
-      <Home />
-      <Checkout />
-      <Offers />
-      <Faq />
-      <OrderReceived />
-      <NotFound />
+      <Switch>
+
+        <Route path='/' exact>
+          <Home />
+        </Route>
+
+        <Route path='/checkout'>
+          <Checkout />
+        </Route>
+
+        <Route path="/offers">
+          <Offers />
+        </Route>
+
+        <Route path="/faq">
+          <Faq />
+        </Route>
+
+        <Route path="/order_received">
+          <OrderReceived />
+        </Route>
+
+        <Route path="*">
+          <NotFound />
+        </Route>
+
+      </Switch>
     </BrowserRouter>
   );
 }

@@ -14,8 +14,7 @@ function Product() {
 export default Product;
 
 const ProductStyle = styled.section`
-	max-height: 100vh;
-	height: 100vh;
+	height: 88vh;
 	display: grid;
 	grid-template-columns: repeat(15, 1fr);
 `;

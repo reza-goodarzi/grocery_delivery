@@ -65,5 +65,5 @@ const ProductItemStyle = styled.div`
 	padding: 2rem;
 
 	overflow-y: scroll;
-	max-height: 100vh;
+	max-height: 88vh;
 `;

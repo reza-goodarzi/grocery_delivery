@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { ErrorMessage } from "../../styles/style";
 import Card from "../UI/Card";
@@ -147,7 +148,7 @@ function PaymentOption() {
 				{/* TODO TEMP (MUST Completely Change) */}
 				<Buttons>
 					<VoucherButton />
-					<CheckoutButton>
+					<CheckoutButton to='/order_received'>
 						<span className="text">پرداخت</span>
 						<span className="price">550,000 تومان</span>
 					</CheckoutButton>
@@ -180,15 +181,17 @@ const Buttons = styled.div`
 	align-items: flex-start;
 `;
 
-const CheckoutButton = styled.button`
-	background-color: var(--color-primary);
-	border-radius: 3rem;
-	font-weight: bold;
-	width: 100%;
-	margin-bottom: 2rem;
-	padding: .5rem;
-	display: flex;
-	justify-content: space-between;
+const CheckoutButton = styled(Link)`
+	&,&:link, &:visited{
+		background-color: var(--color-primary);
+		border-radius: 3rem;
+		font-weight: bold;
+		width: 99%;
+		margin-bottom: 2rem;
+		padding: .5rem;
+		display: flex;
+		justify-content: space-between;
+	}
 
 	.text{
 		color: var(--color-white);

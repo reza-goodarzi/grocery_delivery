@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 function OrderReceived() {
 	return (
 		<Container>
-			<BackHome>بازگشت به خانه</BackHome>
+			<BackHome to='/'>بازگشت به خانه</BackHome>
 
 			<div>
 				<div>
@@ -132,14 +133,17 @@ const Details = styled.div`
 	}
 `;
 
-const BackHome = styled.button`
-	margin-right: 0;
-	border: 1px solid #00000010;
-	color: var(--color-gray);
-	margin-bottom: 5rem ;
-	padding: 1rem;
+const BackHome = styled(Link)`
+	&,&:link, &:visited{
+		margin-right: 0;
+		border: 1px solid #00000010;
+		color: var(--color-gray);
+		margin-bottom: 5rem ;
+		padding: 1rem;
+		border-radius: 5px;
+		transition: all .3s;
+	}
 
-	transition: all .3s;
 
 	&:hover{
 		color: #fff;

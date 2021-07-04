@@ -72,12 +72,11 @@ const GlobalStyle = createGlobalStyle`
 	a:link,
 	a:visited{
       text-decoration: none;
+		width: fit-content;
       padding: 1.3rem 1.5rem;
-      border-radius: 5rem;
       transition: all 0.2s;
       position: relative;
       font-size: 1.6rem;
-		background-color: transparent;
       //Change for the <button> element
       border: none;
       cursor: pointer;
@@ -85,8 +84,6 @@ const GlobalStyle = createGlobalStyle`
 
       display: flex;
       align-items: center;
-		transition: color .2s ease-in;
-
 	}
 
 	button{
@@ -105,7 +102,6 @@ const GlobalStyle = createGlobalStyle`
 		display: flex;
       align-items: center;
 		justify-content: center;
-		transition: color .2s ease-in;
 
 		&:hover{
 			color: var(--color-primary);

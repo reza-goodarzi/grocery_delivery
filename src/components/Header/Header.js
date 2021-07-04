@@ -13,11 +13,11 @@ const Header = () => {
 			<Menu>
 				<Avatar />
 				<LanguageButton />
-				<HeaderButton>
+				<HeaderButton to='/faq'>
 					<FontIcon icon={faQuestionCircle} />
 					<span>کمک لازم داری</span>
 				</HeaderButton>
-				<HeaderButton>پیشنهادات</HeaderButton>
+				<HeaderButton to='/offers'>پیشنهادات</HeaderButton>
 			</Menu>
 			<Logo>
 				<Link to='/'><h1>بقالی</h1></Link>
@@ -36,6 +36,11 @@ const HeaderStyle = styled.header`
 	grid-template-columns: repeat(8, 1fr);
 	grid-template-rows: 12vh;
 
+	position: sticky;
+	top: 0;
+
+	z-index: 10000;
+	
 	@media screen and (max-width: 61.25em){
 		background-color: inherit;
 	}
@@ -56,7 +61,7 @@ const Logo = styled.div`
 	align-items: center;
 `;
 
-const HeaderButton = styled.button`
+const HeaderButton = styled(Link)`
 	@media screen and (max-width: 61.25em){
 		display: none;
 	}

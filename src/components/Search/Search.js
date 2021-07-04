@@ -19,7 +19,7 @@ function Search() {
 				<InputFontIcon icon={faSearch} />
 			</SearchInput>
 		</SearchStyle>
-	)
+	);
 }
 
 export default Search;
@@ -77,6 +77,10 @@ const Button = styled.button`
 	background-color: var(--color-primary);
 	color: var(--color-white);
 	border-radius: 5px 0 0 5px;
+
+	&:hover{
+		color: var(--color-white);
+	}
 
 	@media screen and (max-width: 61.25em){
 		display: none;
