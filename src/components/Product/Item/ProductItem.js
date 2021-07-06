@@ -39,6 +39,7 @@ function ProductItem() {
 			{showModal && selectedItem &&
 				<ItemModal
 					setShowModal={setShowModal}
+					item={selectedItem}
 					name={selectedItem.name}
 					categoryName={selectedItem.categoryName}
 					description={selectedItem.description}

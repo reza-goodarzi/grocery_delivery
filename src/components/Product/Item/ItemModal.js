@@ -8,7 +8,7 @@ import pic3 from '../../../assets/images/products/fruits/fruit4.jpeg';
 import pic4 from '../../../assets/images/products/fruits/fruit5.jpeg';
 import AddToCartButton from "../../UI/AddToCartButton";
 
-function ItemModal({ name, categoryName, description, image, weight, price, discount, setShowModal }) {
+function ItemModal({ item, name, categoryName, description, image, weight, price, discount, setShowModal }) {
 
 	return (
 		<Modal onClick={() => setShowModal(false)}>
@@ -38,7 +38,7 @@ function ItemModal({ name, categoryName, description, image, weight, price, disc
 							</span>
 							{discount > 0 && <span className="without_discount">{price * 1000} ت</span>}
 						</div>
-						<AddToCartButton />
+						<AddToCartButton item={item} />
 					</div>
 				</LeftSide>
 			</Container>

@@ -39,7 +39,7 @@ const HeaderStyle = styled.header`
 	position: sticky;
 	top: 0;
 
-	z-index: 10000;
+	z-index: 100;
 	
 	@media screen and (max-width: 61.25em){
 		background-color: inherit;

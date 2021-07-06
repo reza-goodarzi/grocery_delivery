@@ -7,9 +7,9 @@ import { addItemToCart, removeItemFromCart } from '../../store/cartSlice';
 import { FontIcon } from "../../styles/style";
 
 function AddToCartButton({ item }) {
-	const [show, setShow] = useState(false);
 	const dispatch = useDispatch();
 	const selectedItem = useSelector(state => state.cart.items.find(itm => itm.id === item.id));
+	const [show, setShow] = useState(selectedItem ? true : false);
 
 
 	function addItem() {
