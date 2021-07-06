@@ -1,23 +1,49 @@
+import styled from "styled-components";
 import { faMinus, faPlus, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import styled from "styled-components";
+import { useSelector, useDispatch } from 'react-redux';
+
+import { addItemToCart, removeItemFromCart } from '../../store/cartSlice';
 import { FontIcon } from "../../styles/style";
 
-function AddToCartButton() {
+function AddToCartButton({ item }) {
 	const [show, setShow] = useState(false);
+	const dispatch = useDispatch();
+	const selectedItem = useSelector(state => state.cart.items.find(itm => itm.id === item.id));
+
+
+	function addItem() {
+		if (!show)
+			setShow(true);
+		dispatch(
+			addItemToCart({
+				id: item.id,
+				name: item.name,
+				price: item.price,
+			})
+		);
+	}
+
+	function removeItem() {
+		if (selectedItem.quantity === 1)
+			setShow(false);
+
+		dispatch(removeItemFromCart(item.id));
+	}
+
 	return (
-		<AddToCart onClick={() => setShow(!show)}>
+		<AddToCart >
 			{!show &&
-				<Added>
+				<Added onClick={addItem}>
 					<FontIcon icon={faShoppingCart} />
 					<span>افزودن به سبد</span>
 				</Added>
 			}
 			{show &&
 				<ChangeNumber>
-					<FontIcon icon={faPlus} />
-					<span className="number">1</span>
-					<FontIcon icon={faMinus} />
+					<FontIcon icon={faPlus} onClick={addItem} />
+					<span className="number">{selectedItem.quantity}</span>
+					<FontIcon icon={faMinus} onClick={removeItem} />
 				</ChangeNumber>
 			}
 

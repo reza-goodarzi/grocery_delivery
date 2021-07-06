@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import AddToCartButton from '../../UI/AddToCartButton';
 
-function ItemCard({ name, image, weight, price, discount, onClick }) {
+function ItemCard({ item, name, image, weight, price, discount, onClick }) {
 
 	return (
 		<Card>
@@ -18,7 +18,7 @@ function ItemCard({ name, image, weight, price, discount, onClick }) {
 						<span className="with_discount">{discount > 0 ? ((1 - discount) * price * 1000).toFixed() : price * 1000} ت</span>
 					</div>
 				</PriceGroup>
-				<AddToCartButton />
+				<AddToCartButton item={item} />
 			</Detail>
 		</Card>
 	);

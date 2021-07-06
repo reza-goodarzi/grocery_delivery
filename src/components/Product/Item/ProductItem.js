@@ -28,7 +28,7 @@ function ProductItem() {
 				<ItemCard
 					onClick={() => { setItem(item.id); }}
 					key={item.id}
-					id={item.id}
+					item={item}
 					name={item.name}
 					image={item.image}
 					weight={item.weight}
