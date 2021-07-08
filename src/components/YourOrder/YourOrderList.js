@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 import EmptyCart from "../Cart/EmptyCart";
 
-function YourOrderList({ item }) {
+function YourOrderList() {
 	const cart = useSelector(state => state.cart);
 
 	return (
