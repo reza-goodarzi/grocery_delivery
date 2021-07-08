@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { ErrorMessage } from "../../styles/style";
@@ -14,6 +15,7 @@ function PaymentOption() {
 	const [index, setIndex] = useState(0);
 	const [showModal, setShowModal] = useState(false);
 	const [error, setError] = useState('');
+	const totalQuantity = useSelector(state => state.cart.totalQuantity);
 
 	function addCard() {
 		if (!cardInput || cardInput === '') {
@@ -145,12 +147,10 @@ function PaymentOption() {
 					<p>شماره کارت ای وجود ندارد	</p>
 				}
 
-				{/* TODO TEMP (MUST Completely Change) */}
 				<Buttons>
 					<VoucherButton />
-					<CheckoutButton to='/order_received'>
-						<span className="text">پرداخت</span>
-						<span className="price">550,000 تومان</span>
+					<CheckoutButton to='/order_received' className={totalQuantity === 0 && 'disabled'}>
+						پرداخت
 					</CheckoutButton>
 				</Buttons>
 
@@ -163,7 +163,9 @@ function PaymentOption() {
 					onClick={editMode ? editCardHandler : addCard}
 				>
 					<ErrorMessage>{error}</ErrorMessage>
-					<input type="number" onChange={onChangeHandler} value={cardInput} placeholder="شماره کارت کارت خود را وارد کنید" />
+					<input type="number" onChange={onChangeHandler}
+						value={cardInput} placeholder="شماره کارت کارت خود را وارد کنید"
+					/>
 				</CheckoutModal>
 			}
 		</>
@@ -186,22 +188,17 @@ const CheckoutButton = styled(Link)`
 		background-color: var(--color-primary);
 		border-radius: 3rem;
 		font-weight: bold;
-		width: 99%;
+		width: 100%;
 		margin-bottom: 2rem;
 		padding: .5rem;
 		display: flex;
-		justify-content: space-between;
-	}
-
-	.text{
+		justify-content: center;
+		padding: 1.5rem 0;
 		color: var(--color-white);
-		padding: 1rem;
-	}
 
-	.price{
-		background-color: var(--color-white);
-		color: var(--color-primary);
-		padding: 1.2rem;
-		border-radius: 3rem;
+		&.disabled{
+			pointer-events: none;
+			background-color: var(--color-primary-disabled);
+		}
 	}
 `;

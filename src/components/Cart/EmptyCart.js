@@ -15,9 +15,8 @@ const EmptyCartStyle = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-top: 5rem;
+	
 	svg{
 		width: 18rem;
 	}
-	
 `;

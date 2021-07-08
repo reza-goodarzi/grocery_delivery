@@ -16,7 +16,7 @@ function YourBill() {
 			</span>
 			<span className="delivery_fee">
 				<p className="title">هزینه ارسال</p>
-				<p className="price">0 ت</p>
+				<p className="price">رایگان</p>
 			</span>
 			<span className="discount">
 				<p className="title">تخفیف</p>

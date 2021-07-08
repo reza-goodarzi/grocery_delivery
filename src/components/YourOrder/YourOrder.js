@@ -18,6 +18,7 @@ export default YourOrder;
 const YourOrderStyled = styled.div`
 	margin: 2rem;
 	height: 100vh;
+	min-width: 25rem;
 
 	position: sticky;
 	top: 0;
