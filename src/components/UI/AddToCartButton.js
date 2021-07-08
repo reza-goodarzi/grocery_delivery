@@ -19,7 +19,8 @@ function AddToCartButton({ item }) {
 			addItemToCart({
 				id: item.id,
 				name: item.name,
-				price: item.price,
+				price: item.price - (item.discount * item.price),
+				image: item.image,
 			})
 		);
 	}
