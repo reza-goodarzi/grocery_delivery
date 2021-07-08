@@ -17,7 +17,7 @@ function YourBill() {
 			</span>
 			<span className="total">
 				<p className="title">جمع کل</p>
-				<p className="price">648,000 ت</p>
+				<p className="price">648,000 تومان</p>
 			</span>
 		</YourBillStyle>
 	);
@@ -26,7 +26,7 @@ function YourBill() {
 export default YourBill;
 
 const YourBillStyle = styled.div`
-
+	padding: 0 5px;
 	span{
 		display: flex;
 		justify-content: space-between;
