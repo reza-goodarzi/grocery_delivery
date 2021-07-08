@@ -14,6 +14,12 @@ function DeliverySchedule() {
 		));
 
 		setSchedules(newSchedules);
+		saveSelectedSchedule(newSchedules);
+	}
+
+	function saveSelectedSchedule(newSchedules) {
+		const selectedSchedule = newSchedules.find(schedule => schedule.selected === true);
+		localStorage.setItem('schedule', JSON.stringify(selectedSchedule));
 	}
 
 	return (

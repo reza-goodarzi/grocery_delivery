@@ -9,6 +9,11 @@ function OrderReceived() {
 	const discount = 2000; //Todo Temp
 	const total = subTotal - discount;
 
+	// Get address and schedule and phone number client choose
+	const address = JSON.parse(localStorage.getItem('addresses')).find(address => address.selected === true).address;
+	const number = JSON.parse(localStorage.getItem('numbers')).find(number => number.selected === true).number;
+	const schedule = JSON.parse(localStorage.getItem('schedule')).detail;
+
 	return (
 		<Container>
 			<BackHome to='/'>بازگشت به خانه</BackHome>
@@ -25,7 +30,7 @@ function OrderReceived() {
 						<p>{(Math.random() * 10000).toFixed()}</p>
 					</span>
 					<span className="date">
-						<h3>تاریخ</h3>
+						<h3>زمان سفارش</h3>
 						<p>1 مهر 1400</p>
 					</span>
 					<span className="total">
@@ -47,16 +52,16 @@ function OrderReceived() {
 						<p>{cart.totalQuantity} مورد</p>
 					</span>
 					<span>
-						<h3>زمان سفارش:</h3>
-						<p>12 تیر 1400</p>
+						<h3>شماره تماس:</h3>
+						<p>{number}</p>
 					</span>
 					<span>
 						<h3>زمان تحویل:</h3>
-						<p>تحویل فوری در 90 دقیقه🔥</p>
+						<p>{schedule}</p>
 					</span>
 					<span>
 						<h3>محل تحویل:</h3>
-						<p>خیابان مدرس کوچه دوم</p>
+						<p>{address}</p>
 					</span>
 				</Details>
 			</div>
