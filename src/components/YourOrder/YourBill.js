@@ -1,11 +1,18 @@
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 function YourBill() {
+	const cart = useSelector(state => state.cart);
+
+	const subTotal = cart.items.reduce((acc, item) => acc + item.price, 0) * 1000;
+	const discount = 2000; //Todo Temp
+	const total = subTotal - discount;
+
 	return (
 		<YourBillStyle>
 			<span className="sub_total">
 				<p className="title">جمع ریز</p>
-				<p className="price">720,000 ت</p>
+				<p className="price">{subTotal} تومان</p>
 			</span>
 			<span className="delivery_fee">
 				<p className="title">هزینه ارسال</p>
@@ -13,11 +20,11 @@ function YourBill() {
 			</span>
 			<span className="discount">
 				<p className="title">تخفیف</p>
-				<p className="price">72,000 ت</p>
+				<p className="price">{discount} ت</p>
 			</span>
 			<span className="total">
 				<p className="title">جمع کل</p>
-				<p className="price">648,000 تومان</p>
+				<p className="price">{total} تومان</p>
 			</span>
 		</YourBillStyle>
 	);
