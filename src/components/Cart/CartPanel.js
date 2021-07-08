@@ -26,14 +26,9 @@ const CartPanel = ({ showModal, setShowModal }) => {
 					</NumberOfItems>
 				</Header>
 				<Items>
-					{cart.items.length > 0 ?
+					{cart.totalQuantity > 0 ?
 						cart.items.map(item => <CartItem key={item.id} item={item} />) :
-						(
-							<div className="empty">
-								<EmptyCart />
-								<p>هیج آیتمی وجود ندارد</p>
-							</div>
-						)
+						<EmptyCart />
 					}
 				</Items>
 				<Buttons>
