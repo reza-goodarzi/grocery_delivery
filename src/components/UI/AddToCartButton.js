@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { faMinus, faPlus, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 
 import { addItemToCart, removeItemFromCart } from '../../store/cartSlice';
@@ -9,12 +8,9 @@ import { FontIcon } from "../../styles/style";
 function AddToCartButton({ item }) {
 	const dispatch = useDispatch();
 	const selectedItem = useSelector(state => state.cart.items.find(itm => itm.id === item.id));
-	const [show, setShow] = useState(selectedItem ? true : false);
 
 
 	function addItem() {
-		if (!show)
-			setShow(true);
 		dispatch(
 			addItemToCart({
 				id: item.id,
@@ -26,21 +22,18 @@ function AddToCartButton({ item }) {
 	}
 
 	function removeItem() {
-		if (selectedItem.quantity === 1)
-			setShow(false);
-
 		dispatch(removeItemFromCart(item.id));
 	}
 
 	return (
 		<AddToCart >
-			{!show &&
+			{!selectedItem &&
 				<Added onClick={addItem}>
 					<FontIcon icon={faShoppingCart} />
 					<span>افزودن به سبد</span>
 				</Added>
 			}
-			{show &&
+			{selectedItem &&
 				<ChangeNumber>
 					<FontIcon icon={faPlus} onClick={addItem} />
 					<span className="number">{selectedItem.quantity}</span>
