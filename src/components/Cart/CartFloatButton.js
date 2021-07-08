@@ -5,6 +5,7 @@ import { FontIcon } from "../../styles/style";
 
 const CartFloatButton = ({ setShowModal }) => {
 	const cart = useSelector(state => state.cart);
+	const price = Math.floor(cart.items.reduce((acc, item) => (acc + item.totalPrice), 0) * 13.13);
 
 	return (
 		<Container className={cart.totalQuantity <= 0 && 'disabled'} onClick={() => setShowModal(true)}>
@@ -13,7 +14,7 @@ const CartFloatButton = ({ setShowModal }) => {
 				<span>{`${cart.items.length} آیتم`}</span>
 			</span>
 			<Price>
-				{`${cart.items.reduce((acc, item) => (acc + item.totalPrice), 0) * 1000} تومان`}
+				{`${price} تومان`}
 			</Price>
 		</Container>
 	);
