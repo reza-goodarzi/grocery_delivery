@@ -4,7 +4,7 @@ import styled from "styled-components";
 function YourBill() {
 	const cart = useSelector(state => state.cart);
 
-	const subTotal = cart.items.reduce((acc, item) => acc + item.price, 0) * 1000;
+	const subTotal = cart.items.reduce((acc, item) => acc + item.totalPrice, 0) * 1000;
 	const discount = 2000; //Todo Temp
 	const total = subTotal - discount;
 
