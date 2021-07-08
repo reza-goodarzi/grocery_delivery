@@ -1,12 +1,15 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 
-import CartItem from "./CartItem";
 // import Overlay from "../UI/Overlay";
+import CartItem from "./CartItem";
 import { CircleButton, FontIcon } from "../../styles/style";
+import EmptyCart from "./EmptyCart";
 
 const CartPanel = ({ showModal, setShowModal }) => {
+	const items = useSelector(state => state.cart.items);
 
 	const closePanel = () => {
 		setShowModal(false);
@@ -14,27 +17,32 @@ const CartPanel = ({ showModal, setShowModal }) => {
 
 	return (
 		<>
-			{/* {showModal && <Overlay onClick={closeModal} />} */}
 			<CartPanelStyle showModal={showModal}>
 				<Header>
 					<ClosePanel onClick={closePanel}>X</ClosePanel>
 					<NumberOfItems>
 						<FontIcon icon={faShoppingBag} />
-						5 آیتم
+						<span>{`${items.length} آیتم`}</span>
 					</NumberOfItems>
 				</Header>
 				<Items>
-					<CartItem />
-					<CartItem />
-					<CartItem />
-					<CartItem />
-					<CartItem />
+					{items.length > 0 ?
+						items.map(item => <CartItem key={item.id} item={item} />) :
+						(
+							<div className="empty">
+								<EmptyCart />
+								<p>هیج آیتمی وجود ندارد</p>
+							</div>
+						)
+					}
 				</Items>
 				<Buttons>
 					<VoucherBtn>ایا کد تخفیف دارید؟</VoucherBtn>
 					<CheckoutButton to='/checkout'>
 						<span className="text">پرداخت</span>
-						<span className="price">550,000 تومان</span>
+						<span className="price">
+							{`${items.reduce((acc, item) => (acc + item.totalPrice), 0) * 1000} تومان`}
+						</span>
 					</CheckoutButton>
 				</Buttons>
 			</CartPanelStyle>
@@ -85,11 +93,21 @@ const ClosePanel = styled(CircleButton)`
 
 const Items = styled.div`
 	width: 100%;
-	color: whitesmoke;
+	/* color: whitesmoke; */
 	height: 70vh;
 	color: black;
 	overflow-y: scroll;
 
+	.empty{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 5rem;
+
+		svg{
+			width: 18rem;
+		}
+	}
 `;
 
 const Buttons = styled.div`
