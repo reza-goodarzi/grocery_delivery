@@ -1,10 +1,13 @@
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { FontIcon } from "../../styles/style";
 
 const CartFloatButton = ({ setShowModal }) => {
+	const totalQuantity = useSelector(state => state.cart.totalQuantity);
+
 	return (
-		<Container onClick={() => setShowModal(true)}>
+		<Container className={totalQuantity <= 0 && 'disabled'} onClick={() => setShowModal(true)}>
 			<span>
 				<FontIcon icon={faShoppingBag} />
 				5 آیتم
@@ -29,6 +32,19 @@ const Container = styled.button`
 	display: flex;
 	flex-direction: column;
 	z-index: 100;
+
+	transform-origin: left;
+	visibility: visible;
+	opacity: 1;
+	transform: scale(1);
+
+	transition: all .2s ease-out;
+
+	&.disabled{
+		visibility: hidden;
+		opacity: 0;
+		transform: scale(.8);
+	}
 
 	span{
 		margin: 7px 0;
