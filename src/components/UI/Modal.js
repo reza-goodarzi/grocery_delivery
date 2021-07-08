@@ -32,7 +32,7 @@ const OverlayStyle = styled.div`
 	top: 0;
 	left: 0;
 	position: fixed;
-	z-index: 3;
+	z-index: 103;
 	width: 100%;
 	height: 100%;
 `;
@@ -56,6 +56,6 @@ const ModalStyle = styled.div`
 	left: 50%;	
 	transform: translate(-50%, -50%);
 	border-radius: 5px;
-	z-index: 5;
+	z-index: 105;
 	animation: ${showModal} .2s linear forwards ;
 `;
