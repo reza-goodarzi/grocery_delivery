@@ -4,16 +4,16 @@ import styled from "styled-components";
 import { FontIcon } from "../../styles/style";
 
 const CartFloatButton = ({ setShowModal }) => {
-	const totalQuantity = useSelector(state => state.cart.totalQuantity);
+	const cart = useSelector(state => state.cart);
 
 	return (
-		<Container className={totalQuantity <= 0 && 'disabled'} onClick={() => setShowModal(true)}>
+		<Container className={cart.totalQuantity <= 0 && 'disabled'} onClick={() => setShowModal(true)}>
 			<span>
 				<FontIcon icon={faShoppingBag} />
-				5 آیتم
+				<span>{`${cart.items.length} آیتم`}</span>
 			</span>
 			<Price>
-				550,000 تومان
+				{`${cart.items.reduce((acc, item) => (acc + item.totalPrice), 0) * 1000} تومان`}
 			</Price>
 		</Container>
 	);
