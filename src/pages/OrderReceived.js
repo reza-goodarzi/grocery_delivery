@@ -1,7 +1,14 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 function OrderReceived() {
+	const cart = useSelector(state => state.cart);
+
+	const subTotal = cart.items.reduce((acc, item) => acc + item.totalPrice, 0) * 1000;
+	const discount = 2000; //Todo Temp
+	const total = subTotal - discount;
+
 	return (
 		<Container>
 			<BackHome to='/'>بازگشت به خانه</BackHome>
@@ -15,7 +22,7 @@ function OrderReceived() {
 				<OrderReceivedStyle>
 					<span className="order_number">
 						<h3>شماره سفارش</h3>
-						<p>1854</p>
+						<p>{(Math.random() * 10000).toFixed()}</p>
 					</span>
 					<span className="date">
 						<h3>تاریخ</h3>
@@ -23,7 +30,7 @@ function OrderReceived() {
 					</span>
 					<span className="total">
 						<h3>جمع کل</h3>
-						<p>530,000 تومان</p>
+						<p>{total} تومان</p>
 					</span>
 					<span className="payment_method">
 						<h3>روش پرداخت</h3>
@@ -36,8 +43,8 @@ function OrderReceived() {
 				<h2>جزئیات سفارش</h2>
 				<Details>
 					<span>
-						<h3>تعداد اقلام:</h3>
-						<p>6 مورد</p>
+						<h3>تعداد آیتم ها:</h3>
+						<p>{cart.totalQuantity} مورد</p>
 					</span>
 					<span>
 						<h3>زمان سفارش:</h3>
@@ -59,7 +66,7 @@ function OrderReceived() {
 				<Details>
 					<span>
 						<h3>جمع ریز:</h3>
-						<p>590,000 تومان</p>
+						<p>{subTotal} تومان</p>
 					</span>
 					<span>
 						<h3>هزینه ارسال:</h3>
@@ -67,11 +74,11 @@ function OrderReceived() {
 					</span>
 					<span>
 						<h3>تخفیف:</h3>
-						<p>70,000 تومان</p>
+						<p>{discount} تومان</p>
 					</span>
 					<span>
 						<h3>جمع کل:</h3>
-						<p>530,000 تومان</p>
+						<p>{total} تومان</p>
 					</span>
 				</Details>
 			</div>
