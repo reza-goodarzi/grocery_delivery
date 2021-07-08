@@ -9,7 +9,7 @@ import { CircleButton, FontIcon } from "../../styles/style";
 import EmptyCart from "./EmptyCart";
 
 const CartPanel = ({ showModal, setShowModal }) => {
-	const items = useSelector(state => state.cart.items);
+	const cart = useSelector(state => state.cart);
 
 	const closePanel = () => {
 		setShowModal(false);
@@ -22,12 +22,12 @@ const CartPanel = ({ showModal, setShowModal }) => {
 					<ClosePanel onClick={closePanel}>X</ClosePanel>
 					<NumberOfItems>
 						<FontIcon icon={faShoppingBag} />
-						<span>{`${items.length} آیتم`}</span>
+						<span>{`${cart.items.length} آیتم`}</span>
 					</NumberOfItems>
 				</Header>
 				<Items>
-					{items.length > 0 ?
-						items.map(item => <CartItem key={item.id} item={item} />) :
+					{cart.items.length > 0 ?
+						cart.items.map(item => <CartItem key={item.id} item={item} />) :
 						(
 							<div className="empty">
 								<EmptyCart />
@@ -38,10 +38,10 @@ const CartPanel = ({ showModal, setShowModal }) => {
 				</Items>
 				<Buttons>
 					<VoucherBtn>ایا کد تخفیف دارید؟</VoucherBtn>
-					<CheckoutButton to='/checkout'>
+					<CheckoutButton to='/checkout' className={cart.totalQuantity === 0 && 'disabled'}>
 						<span className="text">پرداخت</span>
 						<span className="price">
-							{`${items.reduce((acc, item) => (acc + item.totalPrice), 0) * 1000} تومان`}
+							{`${cart.items.reduce((acc, item) => (acc + item.totalPrice), 0) * 1000} تومان`}
 						</span>
 					</CheckoutButton>
 				</Buttons>
@@ -133,6 +133,11 @@ const CheckoutButton = styled(Link)`
 		padding: .5rem;
 		display: flex;
 		justify-content: space-between;
+
+		&.disabled{
+			pointer-events: none;
+			background-color: var(--color-primary-disabled);
+		}
 	}
 	
 	.text{
