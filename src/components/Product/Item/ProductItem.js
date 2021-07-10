@@ -1,25 +1,20 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
-import { DUMMY_DATA } from "../../../data/DummyData";
+import PaginationButton from "../../UI/PaginationButton";
 import ItemCard from "./ItemCard";
 import ItemModal from "./ItemModal";
-
-// extract items data in one array
-
-const items = DUMMY_DATA.map((data) => {
-	return data.items;
-}).flat();
 
 // TODO when we have 1 item change grid-template-columns to repeat(auto-fit, 20rem)
 function ProductItem() {
 	const [selectedItem, setSelectedItem] = useState(null);
 	const [showModal, setShowModal] = useState(true);
+	const { items, finished } = useSelector(state => state.products);
 
 	function setItem(id) {
 		const newItem = items.filter(item => item.id === id)[0];
 		setSelectedItem(newItem);
 		setShowModal(true);
-		// console.log(selectedItem);
 	}
 
 	return (
@@ -49,6 +44,7 @@ function ProductItem() {
 					discount={selectedItem.discount}
 				/>
 			}
+			{!finished && <PaginationButton />}
 		</ProductItemStyle>
 	);
 }
