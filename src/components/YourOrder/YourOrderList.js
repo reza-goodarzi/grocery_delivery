@@ -8,8 +8,8 @@ function YourOrderList() {
 	return (
 		<Container>
 			{cart.totalQuantity > 0 ?
-				cart.items.map(item => (
-					<List>
+				cart.items.map((item, i) => (
+					<List key={i}>
 						<p className="quantity">{item.quantity}</p>
 						<p className="divider">x</p>
 						<p className="name">{item.name}</p>
