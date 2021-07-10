@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -16,6 +17,9 @@ function OrderReceived() {
 
 	return (
 		<Container>
+			<Helmet>
+				<title>رسید خرید شما🧾</title>
+			</Helmet>
 			<BackHome to='/'>بازگشت به خانه</BackHome>
 
 			<div>

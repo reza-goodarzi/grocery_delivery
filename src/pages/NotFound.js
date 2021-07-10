@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet";
 import styled from "styled-components";
 
 function NotFound() {
 	return (
 		<NotFoundStyle>
+			<Helmet>
+				<title>404 | صفحه مورد نظر پیدا نشد</title>
+			</Helmet>
 			<h1>404</h1>
 			<h2>صفحه مورد نظر پیدا نشد!</h2>
 		</NotFoundStyle>

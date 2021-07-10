@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import Accordion from "../components/UI/Accordion";
 import { faqData } from "../data/faqData";
@@ -5,6 +6,9 @@ import { faqData } from "../data/faqData";
 function Faq() {
 	return (
 		<FaqStyle>
+			<Helmet>
+				<title>سوالات متداول</title>
+			</Helmet>
 			<h1>سوالات متداول</h1>
 			{faqData.map((faq, index) => (
 				<Accordion key={index} question={faq.question} answer={faq.answer} />

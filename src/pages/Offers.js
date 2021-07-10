@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import Card from "../components/UI/Card";
 import { offersData } from "../data/offersData";
@@ -5,6 +6,9 @@ import { offersData } from "../data/offersData";
 function Offers() {
 	return (
 		<OffersStyle>
+			<Helmet>
+				<title>🔥تخفیفات ویژه</title>
+			</Helmet>
 			<h1>🔥تخفیفات ویژه فروشگاه ما🔥</h1>
 			{offersData.map((offer, index) => (
 				<Card
