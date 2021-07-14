@@ -110,7 +110,7 @@ const Items = styled.div`
 
 const Buttons = styled.div`
 	margin-top: auto;
-	width: 100%;
+	width: 90%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -121,7 +121,7 @@ const CheckoutButton = styled(Link)`
 		background-color: var(--color-primary);
 		border-radius: 3rem;
 		font-weight: bold;
-		width: 90%;
+		width: 97%;
 		margin-bottom: 2rem;
 		padding: .5rem;
 		display: flex;
