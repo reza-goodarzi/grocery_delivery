@@ -1,14 +1,31 @@
+import { useRef } from "react";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { setDiscount } from "../../store/cartSlice";
+import { offersData } from '../../data/offersData';
+
 
 const VoucherButton = () => {
 	const [showCouponInput, setShowCouponInput] = useState(false);
+	const inputRef = useRef();
+	const dispatch = useDispatch();
+
+	function calculateDiscount() {
+		if (inputRef.current.value === '') return;
+
+		const data = offersData.find(offer => offer.coupon === inputRef.current.value);
+
+		if (!data) return;
+
+		dispatch(setDiscount(data.discount));
+	}
 	return (
 		<>
 			{showCouponInput ?
 				<CouponInputBox>
-					<input type="text" placeholder="کد تخفیف خود را وارد کنید" />
-					<button onClick={() => setShowCouponInput(false)}>اعمال</button>
+					<input type="text" placeholder="کد تخفیف خود را وارد کنید" ref={inputRef} />
+					<button onClick={calculateDiscount}>اعمال</button>
 				</CouponInputBox>
 				:
 				<HaveCoupon onClick={() => setShowCouponInput(true)}>ایا کد تخفیف دارید؟</HaveCoupon>

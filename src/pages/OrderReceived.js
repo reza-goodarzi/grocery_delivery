@@ -7,7 +7,7 @@ function OrderReceived() {
 	const cart = useSelector(state => state.cart);
 
 	const subTotal = cart.items.reduce((acc, item) => acc + item.totalPrice, 0) * 1000;
-	const discount = 2000; //Todo Temp
+	const discount = subTotal - (subTotal * cart.discount);
 	const total = subTotal - discount;
 
 	// Get address and schedule and phone number client choose

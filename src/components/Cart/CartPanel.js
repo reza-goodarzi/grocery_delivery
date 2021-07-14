@@ -7,9 +7,12 @@ import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import CartItem from "./CartItem";
 import { CircleButton, FontIcon } from "../../styles/style";
 import EmptyCart from "./EmptyCart";
+import VoucherButton from "../VoucherButton/VoucherButton";
 
 const CartPanel = ({ showModal, setShowModal }) => {
 	const cart = useSelector(state => state.cart);
+	const price = Math.floor(cart.items.reduce((acc, item) => (acc + item.totalPrice), 0) * 1000 * cart.discount);
+
 
 	const closePanel = () => {
 		setShowModal(false);
@@ -32,11 +35,11 @@ const CartPanel = ({ showModal, setShowModal }) => {
 					}
 				</Items>
 				<Buttons>
-					<VoucherBtn>ایا کد تخفیف دارید؟</VoucherBtn>
+					<VoucherButton />
 					<CheckoutButton to='/checkout' className={cart.totalQuantity === 0 && 'disabled'}>
 						<span className="text">پرداخت</span>
 						<span className="price">
-							{`${cart.items.reduce((acc, item) => (acc + item.totalPrice), 0) * 1000} تومان`}
+							{`${price} تومان`}
 						</span>
 					</CheckoutButton>
 				</Buttons>
@@ -111,11 +114,6 @@ const Buttons = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-`;
-
-const VoucherBtn = styled.button`
-	color: var(--color-primary);
-	font-weight: 500;
 `;
 
 const CheckoutButton = styled(Link)`
