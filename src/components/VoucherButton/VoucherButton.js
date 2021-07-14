@@ -8,28 +8,45 @@ import { offersData } from '../../data/offersData';
 
 const VoucherButton = () => {
 	const [showCouponInput, setShowCouponInput] = useState(false);
+	const [couponApplied, setCouponApplied] = useState(false);
+	const [message, setMessage] = useState('');
 	const inputRef = useRef();
 	const dispatch = useDispatch();
 
 	function calculateDiscount() {
-		if (inputRef.current.value === '') return;
+		if (inputRef.current.value === '') {
+			setMessage('کوپن خود را وارد کنید');
+			return;
+		};
 
 		const data = offersData.find(offer => offer.coupon === inputRef.current.value);
 
-		if (!data) return;
+		if (!data) {
+			setMessage('کوپن نامعتبر است');
+			return;
+		};
 
 		dispatch(setDiscount(data.discount));
+		setCouponApplied(true);
+		setMessage(data.coupon);
 	}
+	console.log(message);
+
+
 	return (
 		<>
-			{showCouponInput ?
+			{!showCouponInput && !couponApplied &&
 				<CouponInputBox>
 					<input type="text" placeholder="کد تخفیف خود را وارد کنید" ref={inputRef} />
 					<button onClick={calculateDiscount}>اعمال</button>
+					<p>{message}</p>
 				</CouponInputBox>
-				:
+			}
+			{showCouponInput &&
 				<HaveCoupon onClick={() => setShowCouponInput(true)}>ایا کد تخفیف دارید؟</HaveCoupon>
 			}
+
+			{couponApplied && <Applied>کوپن اعمال شد <span>{message}</span></Applied>}
 		</>
 	);
 };
@@ -47,7 +64,7 @@ const HaveCoupon = styled.button`
 const CouponInputBox = styled.div`
 	display: flex;
 	width: 100%;
-	margin-bottom: 2rem;
+	flex-wrap: wrap;
 	margin-right: 1rem;
 
 	input{
@@ -65,5 +82,20 @@ const CouponInputBox = styled.div`
 		&:hover{
 			color: var(--color-white);
 		}
+	}
+
+	p{
+		width: 100%;
+		color: var(--color-red);
+	}
+`;
+
+const Applied = styled.p`
+	margin-bottom: 2rem;
+
+	span{
+		color: var(--color-primary);
+		font-weight: bold;
+
 	}
 `;

@@ -7,7 +7,6 @@ import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import CartItem from "./CartItem";
 import { CircleButton, FontIcon } from "../../styles/style";
 import EmptyCart from "./EmptyCart";
-import VoucherButton from "../VoucherButton/VoucherButton";
 
 const CartPanel = ({ showModal, setShowModal }) => {
 	const cart = useSelector(state => state.cart);
@@ -35,7 +34,6 @@ const CartPanel = ({ showModal, setShowModal }) => {
 					}
 				</Items>
 				<Buttons>
-					<VoucherButton />
 					<CheckoutButton to='/checkout' className={cart.totalQuantity === 0 && 'disabled'}>
 						<span className="text">پرداخت</span>
 						<span className="price">
